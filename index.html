@@ -6,11 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>بورس سکه مسروری | استعلام اصالت</title>
+<title>بورس سکه مسروری</title>
+
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 
 
 *{
@@ -22,10 +23,11 @@ font-family:Vazirmatn;
 body{
 
 margin:0;
+
 min-height:100vh;
 
 background:
-radial-gradient(circle at top,#2b2208,#050505 55%);
+radial-gradient(circle at top,#3b2a05,#050505 60%);
 
 color:white;
 
@@ -33,9 +35,13 @@ color:white;
 
 
 
-.logo-area{
+/* لوگوی سکه */
 
-text-align:center;
+.logo-box{
+
+display:flex;
+
+justify-content:center;
 
 padding-top:35px;
 
@@ -43,12 +49,11 @@ padding-top:35px;
 
 
 
-.coin-logo{
+.logo{
 
-width:120px;
-height:120px;
+width:130px;
 
-margin:auto;
+height:130px;
 
 border-radius:50%;
 
@@ -58,33 +63,67 @@ align-items:center;
 
 justify-content:center;
 
-position:relative;
-
 
 background:
-linear-gradient(145deg,#fff0a8,#d4af37,#8a6500);
+
+linear-gradient(
+
+145deg,
+
+#fff3a6,
+
+#d4af37,
+
+#8b6508
+
+);
 
 
-border:5px solid #ffe89c;
+border:6px solid #ffe89a;
 
 
 box-shadow:
 
-0 0 35px rgba(212,175,55,.8),
+0 0 40px #d4af37,
 
-inset 0 0 20px rgba(0,0,0,.5);
+inset 0 0 20px #5c4000;
 
+
+position:relative;
+
+animation: glow 3s infinite;
 
 }
 
 
-.coin-logo span{
 
-font-size:65px;
+.logo::before{
+
+content:"";
+
+position:absolute;
+
+width:105px;
+
+height:105px;
+
+border-radius:50%;
+
+border:2px dashed #fff2a8;
+
+}
+
+
+
+.logo span{
+
+font-size:70px;
 
 font-weight:900;
 
-color:#3d2b00;
+color:#241900;
+
+z-index:2;
 
 text-shadow:1px 1px #fff;
 
@@ -92,22 +131,23 @@ text-shadow:1px 1px #fff;
 
 
 
-.coin-logo:after{
+@keyframes glow{
 
-content:"";
+50%{
 
-position:absolute;
+box-shadow:
 
-width:95px;
+0 0 60px #d4af37,
 
-height:95px;
-
-border-radius:50%;
-
-border:2px dashed #fff1a8;
+inset 0 0 25px #5c4000;
 
 }
 
+}
+
+
+
+/* هدر */
 
 
 .header{
@@ -121,11 +161,11 @@ padding:20px;
 
 .header h1{
 
-margin:5px;
-
-font-size:30px;
+font-size:32px;
 
 color:#d4af37;
+
+margin:10px;
 
 }
 
@@ -139,32 +179,37 @@ color:#ddd;
 
 
 
-.card{
+/* کارت اصلی */
 
-max-width:450px;
 
-margin:20px auto;
+.container{
+
+max-width:460px;
+
+margin:auto;
 
 padding:25px;
 
 
 background:
 
-rgba(255,255,255,.06);
+rgba(255,255,255,.07);
 
 
-border:1px solid rgba(212,175,55,.5);
+border:
+
+1px solid rgba(212,175,55,.5);
 
 
-border-radius:25px;
+border-radius:30px;
+
+
+backdrop-filter:blur(12px);
 
 
 box-shadow:
 
-0 0 25px rgba(0,0,0,.5);
-
-
-backdrop-filter:blur(10px);
+0 0 35px rgba(0,0,0,.5);
 
 
 }
@@ -175,36 +220,37 @@ h2{
 
 text-align:center;
 
-color:#d4af37;
+color:#f5d76e;
 
-}
-
-
-
-label{
+}label{
 
 display:block;
 
-margin-bottom:8px;
+margin-bottom:10px;
+
+color:#eee;
 
 }
 
 
-input{
 
+input{
 
 width:100%;
 
 padding:16px;
 
-border-radius:12px;
+border-radius:15px;
 
 border:none;
 
-font-size:16px;
+outline:none;
+
+font-size:17px;
 
 text-align:center;
 
+margin-bottom:15px;
 
 }
 
@@ -212,21 +258,28 @@ text-align:center;
 
 button{
 
-
 width:100%;
 
-margin-top:15px;
+padding:17px;
 
-padding:16px;
-
-border-radius:12px;
+border-radius:15px;
 
 border:none;
 
 
 background:
 
-linear-gradient(90deg,#b8860b,#f5d76e,#b8860b);
+linear-gradient(
+
+90deg,
+
+#8b6508,
+
+#f5d76e,
+
+#8b6508
+
+);
 
 
 font-size:18px;
@@ -236,19 +289,34 @@ font-weight:900;
 cursor:pointer;
 
 
-}.result{
+box-shadow:
+
+0 0 20px rgba(212,175,55,.5);
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.03);
+
+}
+
+
+
+
+.result{
 
 margin-top:25px;
 
 padding:20px;
 
-border-radius:18px;
-
-
 background:#111;
 
-border:1px solid #d4af37;
+border-radius:20px;
 
+border:1px solid #d4af37;
 
 }
 
@@ -256,13 +324,13 @@ border:1px solid #d4af37;
 
 .success{
 
+text-align:center;
+
 color:#00ff88;
 
-font-size:20px;
+font-size:22px;
 
 font-weight:900;
-
-text-align:center;
 
 }
 
@@ -270,9 +338,11 @@ text-align:center;
 
 .item{
 
-padding:12px;
+padding:13px;
 
 border-bottom:1px solid #333;
+
+font-size:16px;
 
 }
 
@@ -280,19 +350,17 @@ border-bottom:1px solid #333;
 
 .footer{
 
-max-width:450px;
+max-width:460px;
 
 margin:30px auto;
 
 text-align:center;
 
-line-height:2.2;
+line-height:2;
 
 color:#ccc;
 
 font-size:14px;
-
-padding:20px;
 
 }
 
@@ -302,7 +370,7 @@ padding:20px;
 
 color:#d4af37;
 
-font-weight:800;
+font-weight:900;
 
 }
 
@@ -316,9 +384,9 @@ font-weight:800;
 <body>
 
 
-<div class="logo-area">
+<div class="logo-box">
 
-<div class="coin-logo">
+<div class="logo">
 
 <span>M</span>
 
@@ -335,30 +403,27 @@ font-weight:800;
 </h1>
 
 <p>
-سامانه رسمی استعلام اصالت سکه
+سامانه هوشمند استعلام اصالت سکه
 </p>
 
 </div>
 
 
 
-<div class="card">
+<div class="container">
 
 
 <h2>
-استعلام اصالت سکه
+🪙 استعلام اصالت سکه
 </h2>
 
 
 <label>
-شماره سریال پلمپ
+شماره سریال پلمپ را وارد کنید
 </label>
 
 
-<input 
-id="codeInput"
-placeholder="MSR-000001">
-
+<input id="codeInput" placeholder="MSR-000001">
 
 
 <button onclick="checkCoin()">
@@ -368,11 +433,9 @@ placeholder="MSR-000001">
 </button>
 
 
-
 <div id="result" class="result" style="display:none">
 
 </div>
-
 
 
 </div>
@@ -381,8 +444,11 @@ placeholder="MSR-000001">
 
 <div class="footer">
 
+
 <div class="gold">
+
 بورس سکه مسروری
+
 </div>
 
 
@@ -429,88 +495,67 @@ const coins={
 
 type:"تمام سکه بانکی",
 
-karat:"۹۰۰",
-
 weight:"۸.۱۳۳ گرم"
 
 },
-
 
 
 "MSR-000002":{
 
 type:"نیم سکه بانکی",
 
-karat:"۹۰۰",
-
 weight:"۴.۰۶۶ گرم"
 
 },
-
 
 
 "MSR-000003":{
 
 type:"ربع سکه بانکی",
 
-karat:"۹۰۰",
-
 weight:"۲.۰۳۲ گرم"
 
 },
-
 
 
 "MSR-000004":{
 
 type:"تمام سکه عادی",
 
-karat:"۹۰۰",
-
 weight:"۸.۱۳۳ گرم"
 
 },
-
 
 
 "MSR-000005":{
 
 type:"نیم سکه عادی",
 
-karat:"۹۰۰",
-
 weight:"۴.۰۶۶ گرم"
 
 },
-
 
 
 "MSR-000006":{
 
 type:"ربع سکه عادی",
 
-karat:"۹۰۰",
-
 weight:"۲.۰۳۲ گرم"
 
 }
 
 
-};
+};function checkCoin(){
 
 
-
-function checkCoin(){
-
-
-let code=document
+let code = document
 .getElementById("codeInput")
 .value
 .trim()
 .toUpperCase();
 
 
-let result=document
+let result = document
 .getElementById("result");
 
 
@@ -518,13 +563,14 @@ let result=document
 if(coins[code]){
 
 
-let coin=coins[code];
+let coin = coins[code];
 
 
 result.style.display="block";
 
 
-result.innerHTML=`
+result.innerHTML = `
+
 
 <div class="success">
 
@@ -533,39 +579,50 @@ result.innerHTML=`
 </div>
 
 
+
 <div class="item">
 
-نوع سکه: ${coin.type}
+نوع سکه:
+${coin.type}
 
 </div>
 
 
+
 <div class="item">
 
-عیار: ${coin.karat}
+عیار:
+۹۰۰
 
 </div>
 
 
+
 <div class="item">
 
-وزن: ${coin.weight}
+وزن:
+${coin.weight}
 
 </div>
 
 
+
 <div class="item">
 
-کد اصالت: ${code}
+شماره سریال:
+${code}
 
 </div>
 
 
+
 <div class="item">
 
-برند: بورس سکه مسروری
+برند:
+بورس سکه مسروری
 
 </div>
+
 
 `;
 
@@ -573,20 +630,21 @@ result.innerHTML=`
 
 }
 
-
 else{
 
 
 result.style.display="block";
 
 
-result.innerHTML=`
+result.innerHTML = `
 
-<div style="color:red;text-align:center;font-weight:bold">
+
+<div style="color:red;text-align:center;font-size:20px;font-weight:bold">
 
 ✕ سکه یافت نشد
 
 </div>
+
 
 
 <div class="item">
@@ -595,25 +653,31 @@ result.innerHTML=`
 
 </div>
 
+
 `;
 
 }
 
 
 }
-// فعال شدن خودکار از طریق QR Code
-const params = new URLSearchParams(window.location.search);
-
-const qrCode = params.get("code");
 
 
-if(qrCode){
 
-document.getElementById("codeInput").value = qrCode.toUpperCase();
+// خواندن خودکار QR
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const qr = urlParams.get("code");
+
+
+if(qr){
+
+document.getElementById("codeInput").value = qr;
 
 checkCoin();
 
 }
+
 
 
 </script>
