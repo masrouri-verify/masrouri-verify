@@ -19,93 +19,149 @@ font-family:Vazirmatn;
 
 body{
 margin:0;
-background:#111;
+background:#0d0d0d;
 color:white;
 }
+
 
 .logo-wrapper{
 text-align:center;
 margin-top:30px;
 }
 
+
 .gold-logo{
-width:90px;
-height:90px;
+
+width:100px;
+height:100px;
 border-radius:50%;
-border:2px solid #d4af37;
+margin:auto;
 display:flex;
 align-items:center;
 justify-content:center;
-margin:auto;
-font-size:50px;
+
+background:linear-gradient(145deg,#f5d76e,#b8860b);
+
+border:4px solid #fff0a8;
+
+font-size:60px;
 font-weight:900;
-color:#d4af37;
+color:#111;
+
+box-shadow:0 0 25px #d4af37;
+
 }
+
 
 .header{
+
 text-align:center;
 padding:20px;
+
 }
+
 
 .header h1{
+
 color:#d4af37;
+
 }
+
 
 .container{
+
 max-width:450px;
 margin:auto;
-background:#1b1b1b;
+
+background:#191919;
+
 padding:25px;
+
 border-radius:20px;
+
 }
+
 
 h2{
+
 text-align:center;
 color:#d4af37;
+
 }
 
-label{
-display:block;
-margin-bottom:10px;
-}
 
 input{
+
 width:100%;
+
 padding:15px;
+
 border-radius:10px;
+
 border:none;
-margin-bottom:15px;
+
 font-size:16px;
+
+margin:10px 0;
+
 }
+
 
 button{
+
 width:100%;
+
 padding:15px;
-border:none;
+
 border-radius:10px;
+
+border:none;
+
 background:#d4af37;
+
 font-size:18px;
+
 font-weight:bold;
-cursor:pointer;
+
 }
+
 
 .result{
+
 margin-top:20px;
+
 background:#222;
+
 padding:15px;
+
 border-radius:15px;
+
 }
+
 
 .item{
+
 padding:10px;
+
 border-bottom:1px solid #444;
+
 }
 
+
 .footer{
-text-align:center;
+
 margin-top:30px;
-color:#aaa;
+
+text-align:center;
+
+color:#ccc;
+
+line-height:2;
+
+font-size:14px;
+
 }
+
 
 </style>
 
@@ -116,23 +172,35 @@ color:#aaa;
 
 
 <div class="logo-wrapper">
-<div class="gold-logo">M</div>
+
+<div class="gold-logo">
+M
 </div>
+
+</div>
+
 
 
 <div class="header">
 
-<h1>بورس سکه مسروری</h1>
+<h1>
+بورس سکه مسروری
+</h1>
 
-<p>سامانه رسمی استعلام اصالت سکه</p>
+<p>
+سامانه رسمی استعلام اصالت سکه
+</p>
 
 </div>
+
 
 
 <div class="container">
 
 
-<h2>استعلام سکه</h2>
+<h2>
+استعلام سکه
+</h2>
 
 
 <label>
@@ -148,63 +216,84 @@ color:#aaa;
 </button>
 
 
-<div class="result" id="result" style="display:none"></div>
+
+<div id="result" class="result" style="display:none">
+
+</div>
+
 
 
 <div class="footer">
+
 بورس سکه مسروری
+
+<br>
+
+آدرس:
+چهارمحال و بختیاری،
+شهرستان بروجن،
+خیابان طالقانی میانی،
+نرسیده به بانک ملت
+
+<br>
+
+تلفن:
+۰۳۸-۳۴۲۳۶۵۳۹
+
 </div>
 
 
 </div>
+
+
 
 
 
 <script>
 
 
-const coins = {
+const coins={
 
 
 "MSR-000001":{
-type:"تمام سکه عادی",
+type:"تمام سکه بانکی",
 karat:"۹۰۰",
 weight:"۸.۱۳۳ گرم"
 },
 
 
 "MSR-000002":{
-type:"نیم سکه عادی",
+type:"نیم سکه بانکی",
 karat:"۹۰۰",
-weight:"۴.۰۶۴ گرم"
+weight:"۴.۰۶۶ گرم"
 },
 
 
 "MSR-000003":{
-type:"ربع سکه عادی",
+type:"ربع سکه بانکی",
 karat:"۹۰۰",
 weight:"۲.۰۳۲ گرم"
 },
 
 
 "MSR-000004":{
-type:"سکه گرمی عادی",
+type:"تمام سکه عادی",
 karat:"۹۰۰",
-weight:"۱.۰۱ گرم"
+weight:"۸.۱۳۳ گرم"
 },
 
 
 "MSR-000005":{
-type:"مدال طلای مسروری",
-karat:"۷۵۰",
-weight:"متغیر"
+type:"نیم سکه عادی",
+karat:"۹۰۰",
+weight:"۴.۰۶۶ گرم"
 },
 
 
 "MSR-000006":{
-type:"سکه یادبود مسروری",
+type:"ربع سکه عادی",
 karat:"۹۰۰",
-weight:"متغیر"
+weight:"۲.۰۳۲ گرم"
 }
 
 
@@ -218,6 +307,7 @@ function checkCoin(){
 let code=document.getElementById("codeInput").value.trim();
 
 let result=document.getElementById("result");
+
 
 
 if(coins[code]){
@@ -235,31 +325,25 @@ result.innerHTML=`
 ✓ اصالت تایید شد
 </h3>
 
-
 <div class="item">
 نوع سکه: ${coin.type}
 </div>
-
 
 <div class="item">
 عیار: ${coin.karat}
 </div>
 
-
 <div class="item">
 وزن: ${coin.weight}
 </div>
 
-
 <div class="item">
-شماره سریال: ${code}
+کد اصالت: ${code}
 </div>
-
 
 <div class="item">
 برند: بورس سکه مسروری
 </div>
-
 
 `;
 
@@ -278,7 +362,6 @@ result.innerHTML=`
 ✕ سکه یافت نشد
 </h3>
 
-
 <div class="item">
 این کد در سامانه ثبت نشده است
 </div>
@@ -292,7 +375,6 @@ result.innerHTML=`
 
 
 </script>
-
 
 
 </body>
