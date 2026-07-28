@@ -3,55 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بورس سکه مسروری</title>
+
+<title>سامانه استعلام اصالت بورس سکه مسروری</title>
 
 <style>
 body{
     margin:0;
     font-family:tahoma, sans-serif;
-    background:#ffffff;
+    background:#f8f7f3;
     color:#222;
 }
+
 .header{
-    background:#f8f8f8;
-    padding:30px;
+    background:#111;
+    color:#d4af37;
     text-align:center;
-    border-bottom:3px solid #d4af37;
+    padding:25px;
 }
-h1{
-    color:#b8860b;
-    font-size:32px;
+
+.header h1{
+    margin:0;
+    font-size:28px;
 }
+
+.header p{
+    color:white;
+}
+
 .box{
-    margin:25px;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 15px #ddd;
+    max-width:450px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px #ddd;
     text-align:center;
 }
-.coins{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+
+input{
+    width:90%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+    text-align:center;
 }
-.coin{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    background:linear-gradient(#ffd700,#b8860b);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+button{
+    margin-top:20px;
+    padding:15px 45px;
+    border:none;
+    border-radius:30px;
+    background:#d4af37;
     color:white;
-    font-weight:bold;
-    font-size:20px;
+    font-size:17px;
+    cursor:pointer;
 }
+
+.result{
+    display:none;
+    margin-top:30px;
+    background:#111;
+    color:white;
+    border:2px solid #d4af37;
+    border-radius:20px;
+    padding:25px;
+}
+
+.gold{
+    color:#d4af37;
+}
+
 .footer{
-    background:#222;
-    color:white;
-    padding:20px;
     text-align:center;
+    padding:30px;
+    font-size:14px;
 }
 </style>
 
@@ -61,44 +87,66 @@ h1{
 
 <div class="header">
 <h1>بورس سکه مسروری</h1>
-<p>استعلام و تایید اصالت سکه</p>
-</div>
-
-<div class="box">
-<h2>انواع سکه</h2>
-
-<div class="coins">
-
-<div class="coin">ربع<br>عادی</div>
-<div class="coin">نیم<br>عادی</div>
-<div class="coin">تمام<br>عادی</div>
-
-<div class="coin">ربع<br>بانکی</div>
-<div class="coin">نیم<br>بانکی</div>
-<div class="coin">تمام<br>بانکی</div>
-
-</div>
+<p>سامانه رسمی استعلام اصالت سکه</p>
 </div>
 
 
 <div class="box">
-<h2>اطلاعات تماس</h2>
 
-<p>
-چهارمحال بختیاری، شهرستان بروجن<br>
-خیابان طالقانی میانی، نرسیده به بانک ملت
-</p>
+<h2>استعلام سکه</h2>
 
-<p>
-تلفن: ۰۳۸-۳۴۲۳۶۵۳۹
-</p>
+<p>شماره سریال روی کارت را وارد کنید</p>
+
+<input id="code" placeholder="مثال: MSR-34236539">
+
+<br>
+
+<button onclick="check()">بررسی اصالت</button>
+
+
+<div class="result" id="result">
+
+<h2 class="gold">✓ اصالت تأیید شد</h2>
+
+<p>نوع سکه: <b id="type">نیم سکه عادی</b></p>
+
+<p>عیار: ۹۰۰</p>
+
+<p>وزن: ۴٫۰۶۶ گرم</p>
+
+<p>شماره سریال: <span id="serial"></span></p>
+
+<p>ضمانت اصالت: ✓ تأیید شده</p>
+
+</div>
 
 </div>
 
 
 <div class="footer">
-بورس سکه مسروری
+
+بورس سکه مسروری<br>
+چهارمحال و بختیاری - شهرستان بروجن<br>
+خیابان طالقانی میانی، نرسیده به بانک ملت<br>
+☎ ۰۳۸-۳۴۲۳۶۵۳۹
+
 </div>
+
+
+<script>
+
+function check(){
+
+let code=document.getElementById("code").value;
+
+document.getElementById("serial").innerHTML=code;
+
+document.getElementById("result").style.display="block";
+
+}
+
+</script>
+
 
 </body>
 </html>
