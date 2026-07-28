@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>سامانه استعلام سکه مسروری</title>
+<title>بورس سکه مسروری</title>
 
 <style>
 
@@ -12,204 +14,111 @@
 
 *{
 box-sizing:border-box;
+font-family:Vazirmatn;
 }
 
 body{
 margin:0;
-font-family:Vazirmatn,tahoma;
-background:#f5f3ee;
-color:#222;
+background:#111;
+color:white;
+}
+
+.logo-wrapper{
+text-align:center;
+margin-top:30px;
+}
+
+.gold-logo{
+width:90px;
+height:90px;
+border-radius:50%;
+border:2px solid #d4af37;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+font-size:50px;
+font-weight:900;
+color:#d4af37;
 }
 
 .header{
-background:#111;
-padding:45px 20px;
 text-align:center;
-border-bottom:3px solid #d4af37;
+padding:20px;
 }
 
 .header h1{
 color:#d4af37;
-font-size:38px;
-margin:0 0 15px;
-font-weight:900;
 }
-
-.header p{
-color:white;
-font-size:20px;
-}
-
 
 .container{
-max-width:600px;
-margin:-20px auto 40px;
-background:white;
-border-radius:35px;
-padding:35px 25px;
-box-shadow:0 15px 40px #0002;
+max-width:450px;
+margin:auto;
+background:#1b1b1b;
+padding:25px;
+border-radius:20px;
 }
-
 
 h2{
 text-align:center;
-font-size:34px;
-margin-bottom:20px;
+color:#d4af37;
 }
-
 
 label{
 display:block;
-text-align:center;
-font-size:20px;
-margin-bottom:15px;
+margin-bottom:10px;
 }
-
 
 input{
 width:100%;
-padding:20px;
-border-radius:25px;
-border:2px solid #222;
-font-size:20px;
-text-align:center;
+padding:15px;
+border-radius:10px;
+border:none;
+margin-bottom:15px;
+font-size:16px;
 }
 
-
 button{
-width:70%;
-display:block;
-margin:25px auto;
-padding:18px;
-border:0;
-border-radius:30px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
 background:#d4af37;
-font-size:22px;
-color:white;
+font-size:18px;
+font-weight:bold;
 cursor:pointer;
 }
 
-
 .result{
-background:#111;
-color:white;
-border:3px solid #d4af37;
-border-radius:30px;
-padding:30px;
-text-align:center;
-box-shadow:0 0 30px #d4af3766;
+margin-top:20px;
+background:#222;
+padding:15px;
+border-radius:15px;
 }
-
-
-.result h3{
-color:#d4af37;
-font-size:30px;
-}
-
 
 .item{
-background:#1c1c1c;
-border:1px solid #d4af37;
-border-radius:18px;
-padding:15px;
-margin:15px 0;
-font-size:20px;
+padding:10px;
+border-bottom:1px solid #444;
 }
-
 
 .footer{
 text-align:center;
 margin-top:30px;
-color:#777;
+color:#aaa;
 }
 
-.logo-wrapper{
-    display:flex;
-    justify-content:center;
-    margin:25px 0 -10px; 
-}
-
-.gold-logo{
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    background:linear-gradient(145deg,#111,#222);
-    border:3px solid #d4af37;
-    color:#d4af37;
-    font-size:55px;
-    font-weight:900;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:serif;
-    box-shadow:0 0 25px rgba(212,175,55,.7);
-    position:relative;
-}
-
-.gold-logo::after{
-    content:"";
-    position:absolute;
-    inset:-8px;
-    border-radius:50%;
-    border:1px solid #d4af37;
-}
 </style>
 
 </head>
 
-<script>
-const button = document.querySelector("button");
-const input = document.querySelector("input");
-const result = document.querySelector(".result");
 
-result.style.display = "none";
-
-button.onclick = function(){
-
-let code = input.value.trim();
-
-if(code === "MSR-34236539"){
-
-result.style.display = "block";
-result.innerHTML = `
-<h3>✓ اصالت تایید شد</h3>
-
-<div class="item">
-نوع سکه: نیم سکه عادی
-</div>
-
-<div class="item">
-عیار: ۹۰۰
-</div>
-
-<div class="item">
-وزن: ۴.۰۶۴ گرم
-</div>
-
-<div class="item">
-شماره سریال: ${code}
-</div>
-`;
-
-}else{
-
-result.style.display = "block";
-
-result.innerHTML = `
-<h3 style="color:red">✕ سکه یافت نشد</h3>
-<div class="item">
-شماره سریال وارد شده معتبر نیست
-</div>
-`;
-
-}
-
-}
-</script>
 <body>
+
+
 <div class="logo-wrapper">
-  <div class="gold-logo">M</div>
+<div class="gold-logo">M</div>
 </div>
+
 
 <div class="header">
 
@@ -226,42 +135,20 @@ result.innerHTML = `
 <h2>استعلام سکه</h2>
 
 
-<label>شماره سریال کارت را وارد کنید</label>
+<label>
+شماره سریال پلمپ را وارد کنید
+</label>
 
 
-<input placeholder="مثال : MSR-34236539">
+<input id="codeInput" placeholder="مثال : MSR-000001">
 
 
-<button>بررسی اصالت</button>
+<button onclick="checkCoin()">
+بررسی اصالت
+</button>
 
 
-<div class="result">
-
-
-<h3>✓ اصالت تایید شد</h3>
-
-
-<div class="item">
-نوع سکه: نیم سکه عادی
-</div>
-
-
-<div class="item">
-عیار: ۹۰۰
-</div>
-
-
-<div class="item">
-وزن: ۴.۰۶۴ گرم
-</div>
-
-
-<div class="item">
-شماره سریال: MSR-34236539
-</div>
-
-
-</div>
+<div class="result" id="result" style="display:none"></div>
 
 
 <div class="footer">
@@ -272,5 +159,142 @@ result.innerHTML = `
 </div>
 
 
+
+<script>
+
+
+const coins = {
+
+
+"MSR-000001":{
+type:"تمام سکه عادی",
+karat:"۹۰۰",
+weight:"۸.۱۳۳ گرم"
+},
+
+
+"MSR-000002":{
+type:"نیم سکه عادی",
+karat:"۹۰۰",
+weight:"۴.۰۶۴ گرم"
+},
+
+
+"MSR-000003":{
+type:"ربع سکه عادی",
+karat:"۹۰۰",
+weight:"۲.۰۳۲ گرم"
+},
+
+
+"MSR-000004":{
+type:"سکه گرمی عادی",
+karat:"۹۰۰",
+weight:"۱.۰۱ گرم"
+},
+
+
+"MSR-000005":{
+type:"مدال طلای مسروری",
+karat:"۷۵۰",
+weight:"متغیر"
+},
+
+
+"MSR-000006":{
+type:"سکه یادبود مسروری",
+karat:"۹۰۰",
+weight:"متغیر"
+}
+
+
+};
+
+
+
+function checkCoin(){
+
+
+let code=document.getElementById("codeInput").value.trim();
+
+let result=document.getElementById("result");
+
+
+if(coins[code]){
+
+
+let coin=coins[code];
+
+
+result.style.display="block";
+
+
+result.innerHTML=`
+
+<h3 style="color:#00ff88">
+✓ اصالت تایید شد
+</h3>
+
+
+<div class="item">
+نوع سکه: ${coin.type}
+</div>
+
+
+<div class="item">
+عیار: ${coin.karat}
+</div>
+
+
+<div class="item">
+وزن: ${coin.weight}
+</div>
+
+
+<div class="item">
+شماره سریال: ${code}
+</div>
+
+
+<div class="item">
+برند: بورس سکه مسروری
+</div>
+
+
+`;
+
+}
+
+
+else{
+
+
+result.style.display="block";
+
+
+result.innerHTML=`
+
+<h3 style="color:red">
+✕ سکه یافت نشد
+</h3>
+
+
+<div class="item">
+این کد در سامانه ثبت نشده است
+</div>
+
+`;
+
+}
+
+
+}
+
+
+</script>
+
+
+
 </body>
+
 </html>
