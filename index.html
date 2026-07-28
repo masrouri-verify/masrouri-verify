@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -8,76 +8,88 @@
 
 <style>
 body{
-    margin:0;
-    font-family:tahoma, sans-serif;
-    background:#f8f7f3;
-    color:#222;
+margin:0;
+font-family:tahoma;
+background:#f7f5ef;
+color:#222;
 }
 
 .header{
-    background:#111;
-    color:#d4af37;
-    text-align:center;
-    padding:25px;
+background:#111;
+color:#d4af37;
+padding:30px;
+text-align:center;
 }
 
 .header h1{
-    margin:0;
-    font-size:28px;
+margin:0;
+font-size:28px;
 }
 
 .header p{
-    color:white;
+color:white;
 }
 
 .box{
-    max-width:450px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px #ddd;
-    text-align:center;
+max-width:450px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px #ddd;
+text-align:center;
 }
 
 input{
-    width:90%;
-    padding:15px;
-    border-radius:12px;
-    border:1px solid #ccc;
-    font-size:16px;
-    text-align:center;
+width:90%;
+padding:15px;
+border-radius:15px;
+border:1px solid #ccc;
+font-size:16px;
+text-align:center;
 }
 
 button{
-    margin-top:20px;
-    padding:15px 45px;
-    border:none;
-    border-radius:30px;
-    background:#d4af37;
-    color:white;
-    font-size:17px;
-    cursor:pointer;
+margin-top:20px;
+padding:15px 45px;
+border:0;
+border-radius:30px;
+background:#d4af37;
+color:white;
+font-size:17px;
 }
 
 .result{
-    display:none;
-    margin-top:30px;
-    background:#111;
-    color:white;
-    border:2px solid #d4af37;
-    border-radius:20px;
-    padding:25px;
+display:none;
+margin-top:35px;
+background:linear-gradient(145deg,#111,#000);
+color:white;
+padding:30px;
+border-radius:25px;
+border:2px solid #d4af37;
+box-shadow:0 0 25px #d4af37;
+}
+
+.result h2{
+color:#d4af37;
+font-size:28px;
+}
+
+.result p{
+font-size:18px;
+padding:10px;
+border-bottom:1px solid #444;
 }
 
 .gold{
-    color:#d4af37;
+color:#d4af37;
+font-weight:bold;
 }
 
 .footer{
-    text-align:center;
-    padding:30px;
-    font-size:14px;
+text-align:center;
+padding:30px;
+font-size:14px;
 }
 </style>
 
@@ -95,9 +107,9 @@ button{
 
 <h2>استعلام سکه</h2>
 
-<p>شماره سریال روی کارت را وارد کنید</p>
+<p>شماره سریال کارت را وارد کنید</p>
 
-<input id="code" placeholder="مثال: MSR-34236539">
+<input id="code" placeholder="MSR-34236539">
 
 <br>
 
@@ -106,17 +118,22 @@ button{
 
 <div class="result" id="result">
 
-<h2 class="gold">✓ اصالت تأیید شد</h2>
+<h2>✓ اصالت تأیید شد</h2>
 
-<p>نوع سکه: <b id="type">نیم سکه عادی</b></p>
+<p>نوع سکه:
+<span class="gold">نیم سکه عادی</span></p>
 
-<p>عیار: ۹۰۰</p>
+<p>عیار:
+<span class="gold">۹۰۰</span></p>
 
-<p>وزن: ۴٫۰۶۶ گرم</p>
+<p>وزن:
+<span class="gold">۴٫۰۶۶ گرم</span></p>
 
-<p>شماره سریال: <span id="serial"></span></p>
+<p>شماره سریال:
+<span class="gold" id="serial"></span></p>
 
-<p>ضمانت اصالت: ✓ تأیید شده</p>
+<p>وضعیت:
+<span class="gold">تأیید شده ✓</span></p>
 
 </div>
 
@@ -134,7 +151,6 @@ button{
 
 
 <script>
-
 function check(){
 
 let code=document.getElementById("code").value;
@@ -144,9 +160,7 @@ document.getElementById("serial").innerHTML=code;
 document.getElementById("result").style.display="block";
 
 }
-
 </script>
-
 
 </body>
 </html>
