@@ -1,154 +1,341 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>بورس سکه مسروری</title>
+<title>بورس سکه مسروری | استعلام اصالت</title>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap');
+
 
 *{
 box-sizing:border-box;
+font-family:Vazirmatn;
 }
+
 
 body{
+
 margin:0;
-font-family:Vazirmatn,sans-serif;
-background:#111;
+min-height:100vh;
+
+background:
+radial-gradient(circle at top,#2b2208,#050505 55%);
+
 color:white;
+
 }
 
-header{
-background:linear-gradient(135deg,#000,#3b2a00);
-padding:35px 20px;
+
+
+.logo-area{
+
 text-align:center;
-border-bottom:2px solid #d4af37;
+
+padding-top:35px;
+
 }
 
-.logo{
-font-size:42px;
-font-weight:900;
-color:#d4af37;
-}
 
-.subtitle{
-margin-top:10px;
-font-size:18px;
-}
 
-.container{
-max-width:1100px;
+.coin-logo{
+
+width:120px;
+height:120px;
+
 margin:auto;
-padding:25px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+
+background:
+linear-gradient(145deg,#fff0a8,#d4af37,#8a6500);
+
+
+border:5px solid #ffe89c;
+
+
+box-shadow:
+
+0 0 35px rgba(212,175,55,.8),
+
+inset 0 0 20px rgba(0,0,0,.5);
+
+
 }
+
+
+.coin-logo span{
+
+font-size:65px;
+
+font-weight:900;
+
+color:#3d2b00;
+
+text-shadow:1px 1px #fff;
+
+}
+
+
+
+.coin-logo:after{
+
+content:"";
+
+position:absolute;
+
+width:95px;
+
+height:95px;
+
+border-radius:50%;
+
+border:2px dashed #fff1a8;
+
+}
+
+
+
+.header{
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+.header h1{
+
+margin:5px;
+
+font-size:30px;
+
+color:#d4af37;
+
+}
+
+
+
+.header p{
+
+color:#ddd;
+
+}
+
+
 
 .card{
-background:#1c1c1c;
-border:1px solid #d4af37;
-border-radius:20px;
+
+max-width:450px;
+
+margin:20px auto;
+
 padding:25px;
-margin:20px 0;
-box-shadow:0 0 20px #000;
+
+
+background:
+
+rgba(255,255,255,.06);
+
+
+border:1px solid rgba(212,175,55,.5);
+
+
+border-radius:25px;
+
+
+box-shadow:
+
+0 0 25px rgba(0,0,0,.5);
+
+
+backdrop-filter:blur(10px);
+
+
 }
+
+
 
 h2{
-color:#d4af37;
-}
 
-.coins{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.coin{
-background:#252525;
-padding:20px;
-border-radius:18px;
 text-align:center;
-border:1px solid #555;
-}
 
-.coin span{
-display:block;
-font-size:30px;
 color:#d4af37;
-margin-bottom:10px;
+
 }
 
-button{
-background:#d4af37;
-border:0;
-padding:14px 35px;
-border-radius:30px;
-font-size:17px;
-cursor:pointer;
-font-family:inherit;
+
+
+label{
+
+display:block;
+
+margin-bottom:8px;
+
 }
+
 
 input{
+
+
 width:100%;
-padding:15px;
-border-radius:15px;
+
+padding:16px;
+
+border-radius:12px;
+
 border:none;
-margin:10px 0;
-font-family:inherit;
+
+font-size:16px;
+
+text-align:center;
+
+
 }
 
-.result{
-background:#000;
-padding:15px;
-border-radius:15px;
-color:#d4af37;
+
+
+button{
+
+
+width:100%;
+
+margin-top:15px;
+
+padding:16px;
+
+border-radius:12px;
+
+border:none;
+
+
+background:
+
+linear-gradient(90deg,#b8860b,#f5d76e,#b8860b);
+
+
+font-size:18px;
+
+font-weight:900;
+
+cursor:pointer;
+
+
+}.result{
+
+margin-top:25px;
+
+padding:20px;
+
+border-radius:18px;
+
+
+background:#111;
+
+border:1px solid #d4af37;
+
+
+}
+
+
+
+.success{
+
+color:#00ff88;
+
 font-size:20px;
+
+font-weight:900;
+
 text-align:center;
+
 }
 
-footer{
-background:#000;
-text-align:center;
-padding:25px;
-color:#aaa;
+
+
+.item{
+
+padding:12px;
+
+border-bottom:1px solid #333;
+
 }
+
+
+
+.footer{
+
+max-width:450px;
+
+margin:30px auto;
+
+text-align:center;
+
+line-height:2.2;
+
+color:#ccc;
+
+font-size:14px;
+
+padding:20px;
+
+}
+
+
 
 .gold{
+
 color:#d4af37;
+
+font-weight:800;
+
 }
+
+
 
 </style>
 
 </head>
 
+
 <body>
 
 
-<header>
+<div class="logo-area">
 
-<div class="logo">
-🪙 بورس سکه مسروری
+<div class="coin-logo">
+
+<span>M</span>
+
 </div>
 
-<div class="subtitle">
-خرید و فروش سکه با اعتماد و اعتبار
 </div>
 
-</header>
 
 
+<div class="header">
 
-<div class="container">
-
-
-<div class="card">
-
-<h2>درباره بورس سکه مسروری</h2>
+<h1>
+بورس سکه مسروری
+</h1>
 
 <p>
-ارائه دهنده انواع سکه، خدمات مرتبط با سکه و مشاوره خرید طلا و سکه
-با کیفیت و اعتماد بالا.
+سامانه رسمی استعلام اصالت سکه
 </p>
 
 </div>
@@ -157,77 +344,32 @@ color:#d4af37;
 
 <div class="card">
 
-<h2>انواع سکه</h2>
 
-<div class="coins">
-
-
-<div class="coin">
-<span>🪙</span>
-تمام سکه
-<p>۲۴ عیار</p>
-</div>
+<h2>
+استعلام اصالت سکه
+</h2>
 
 
-<div class="coin">
-<span>🪙</span>
-نیم سکه
-<p>۲۴ عیار</p>
-</div>
+<label>
+شماره سریال پلمپ
+</label>
 
 
-<div class="coin">
-<span>🪙</span>
-ربع سکه
-<p>۲۴ عیار</p>
-</div>
-
-
-<div class="coin">
-<span>🪙</span>
-سکه گرمی
-<p>۲۴ عیار</p>
-</div>
-
-
-</div>
-
-</div>
+<input 
+id="codeInput"
+placeholder="MSR-000001">
 
 
 
+<button onclick="checkCoin()">
 
-<div class="card">
+بررسی اصالت
 
-<h2>استعلام سکه</h2>
-
-<input id="code" placeholder="کد سکه را وارد کنید">
-
-<button onclick="check()">
-استعلام
 </button>
 
-<div id="answer" class="result" style="margin-top:20px">
-منتظر ورود کد
-</div>
 
 
-</div>
-
-
-
-<div class="card">
-
-<h2>راه‌های ارتباطی</h2>
-
-<p>
-📍 چهارمحال و بختیاری - شهرستان بروجن
-</p>
-
-<p>
-خیابان طالقانی میانی، نرسیده به بانک ملت
-</p>
-
+<div id="result" class="result" style="display:none">
 
 </div>
 
@@ -237,40 +379,246 @@ color:#d4af37;
 
 
 
-<footer>
+<div class="footer">
 
 <div class="gold">
 بورس سکه مسروری
 </div>
 
-تمامی حقوق محفوظ است © 2026
 
-</footer>
+آدرس:
+
+<br>
+
+چهارمحال و بختیاری
+
+<br>
+
+شهرستان بروجن
+
+<br>
+
+خیابان طالقانی میانی
+
+<br>
+
+نرسیده به بانک ملت
+
+
+<br><br>
+
+
+تلفن:
+
+<br>
+
+۰۳۸-۳۴۲۳۶۵۳۹
+
+
+</div>
 
 
 
 <script>
 
-function check(){
 
-let code=document.getElementById("code").value;
+const coins={
 
-if(code==""){
-document.getElementById("answer").innerHTML=
-"لطفاً کد را وارد کنید";
+
+"MSR-000001":{
+
+type:"تمام سکه بانکی",
+
+karat:"۹۰۰",
+
+weight:"۸.۱۳۳ گرم"
+
+},
+
+
+
+"MSR-000002":{
+
+type:"نیم سکه بانکی",
+
+karat:"۹۰۰",
+
+weight:"۴.۰۶۶ گرم"
+
+},
+
+
+
+"MSR-000003":{
+
+type:"ربع سکه بانکی",
+
+karat:"۹۰۰",
+
+weight:"۲.۰۳۲ گرم"
+
+},
+
+
+
+"MSR-000004":{
+
+type:"تمام سکه عادی",
+
+karat:"۹۰۰",
+
+weight:"۸.۱۳۳ گرم"
+
+},
+
+
+
+"MSR-000005":{
+
+type:"نیم سکه عادی",
+
+karat:"۹۰۰",
+
+weight:"۴.۰۶۶ گرم"
+
+},
+
+
+
+"MSR-000006":{
+
+type:"ربع سکه عادی",
+
+karat:"۹۰۰",
+
+weight:"۲.۰۳۲ گرم"
+
 }
+
+
+};
+
+
+
+function checkCoin(){
+
+
+let code=document
+.getElementById("codeInput")
+.value
+.trim()
+.toUpperCase();
+
+
+let result=document
+.getElementById("result");
+
+
+
+if(coins[code]){
+
+
+let coin=coins[code];
+
+
+result.style.display="block";
+
+
+result.innerHTML=`
+
+<div class="success">
+
+✓ اصالت تایید شد
+
+</div>
+
+
+<div class="item">
+
+نوع سکه: ${coin.type}
+
+</div>
+
+
+<div class="item">
+
+عیار: ${coin.karat}
+
+</div>
+
+
+<div class="item">
+
+وزن: ${coin.weight}
+
+</div>
+
+
+<div class="item">
+
+کد اصالت: ${code}
+
+</div>
+
+
+<div class="item">
+
+برند: بورس سکه مسروری
+
+</div>
+
+`;
+
+
+
+}
+
 
 else{
 
-document.getElementById("answer").innerHTML=
-"✅ کد "+code+" معتبر است";
+
+result.style.display="block";
+
+
+result.innerHTML=`
+
+<div style="color:red;text-align:center;font-weight:bold">
+
+✕ سکه یافت نشد
+
+</div>
+
+
+<div class="item">
+
+این کد در سامانه ثبت نشده است
+
+</div>
+
+`;
 
 }
 
+
 }
+// فعال شدن خودکار از طریق QR Code
+const params = new URLSearchParams(window.location.search);
+
+const qrCode = params.get("code");
+
+
+if(qrCode){
+
+document.getElementById("codeInput").value = qrCode.toUpperCase();
+
+checkCoin();
+
+}
+
 
 </script>
 
 
 </body>
+
 </html>
