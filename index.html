@@ -3,65 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>استعلام اصالت سکه | مسروری</title>
+<title>بورس سکه مسروری | استعلام اصالت</title>
 <style>
-body{margin:0;background:#101827;color:#fff;font-family:Tahoma,Arial,sans-serif;text-align:center;padding:20px}
-.card{max-width:440px;margin:35px auto;background:#1b2638;border:1px solid #c6a45b;border-radius:18px;padding:25px 18px;box-sizing:border-box}
-.logo{font-size:38px;color:#d9b765;font-weight:bold}
-h1{font-size:22px;color:#e3c477}
-p{line-height:2;color:#ddd}
-input,button{width:100%;box-sizing:border-box;padding:14px;margin-top:12px;border-radius:9px;font-size:16px}
-input{border:1px solid #b99b53;background:#101827;color:white;text-align:center;direction:ltr}
-button{background:#d9b765;color:#101827;border:0;font-weight:bold;cursor:pointer}
-#result{margin-top:20px;text-align:right;line-height:2.3}
-.ok{color:#77e0a1}.bad{color:#ff9292}
-small{color:#bbb}
+*{box-sizing:border-box}
+:root{--gold:#f5bd50;--navy:#031326;--line:#c9983e}
+body{margin:0;background:#020a13;color:#f7f7f7;font-family:Tahoma,Arial,sans-serif}
+header{padding:20px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;background:radial-gradient(ellipse at top,#142b45,#020a13);border-bottom:2px solid var(--gold)}
+.brand{display:flex;align-items:center;gap:15px}
+.logo{width:62px;height:72px;border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:35px;font-weight:bold;clip-path:polygon(50% 0,100% 22%,88% 75%,50% 100%,12% 75%,0 22%)}
+h1{font-size:clamp(20px,3vw,31px);color:var(--gold);margin:0 0 10px}
+header p{margin:0}
+.menu{font-size:32px;color:var(--gold)}
+.banner{text-align:center;padding:27px 15px;background:linear-gradient(120deg,#031326,#102a48,#031326);border-bottom:1px solid var(--gold)}
+.banner h2{color:var(--gold);font-size:clamp(24px,4vw,36px);margin:0 0 12px}
+.banner p{line-height:2;margin:0}
+.wrap{max-width:1150px;margin:auto;padding:22px 18px}
+.grid{display:grid;grid-template-columns:1fr 1.1fr;gap:20px}
+.panel{background:linear-gradient(145deg,#06182b,#020b15);border:1px solid var(--line);border-radius:15px;padding:18px;min-width:0}
+.panel h3{color:var(--gold);font-size:20px;margin:0 0 18px}
+.coin-art{min-height:300px;display:grid;place-items:center;border:1px solid #88662b;border-radius:12px;background:radial-gradient(circle,#294968,#071a30 60%,#020a14)}
+.coin{width:min(220px,65vw);aspect-ratio:1;border-radius:50%;border:8px double #ffe09a;background:radial-gradient(circle,#f9d887,#bd811e 65%,#75430b);box-shadow:0 0 28px #e6ac4b77,inset 0 0 0 8px #c18b2e;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#663b0b;text-align:center}
+.coin .portrait{font-size:65px}
+.coin .stars{font-size:20px}
+.coin strong{font-size:18px}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.thumb{border:1px solid var(--line);border-radius:8px;padding:10px 3px;text-align:center;background:#07172a;color:var(--gold);font-size:12px}
+.thumb span{display:block;font-size:25px;margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr 1.35fr;gap:8px;padding:13px 0;border-top:1px solid #344253;line-height:1.8}
+.row:first-of-type{border-top:0}
+.value{text-align:left;overflow-wrap:anywhere}
+.status{color:#62e58a;border:1px solid #168843;border-radius:20px;padding:4px 12px;display:inline-block}
+.lower{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;margin-top:20px}
+.pack{min-height:240px;border:1px solid #8f6a2a;border-radius:12px;background:radial-gradient(ellipse,#173858,#041226);display:grid;place-items:center;padding:15px}
+.pack-card{width:95%;max-width:420px;min-height:185px;border:4px double #d5aa52;border-radius:12px;background:linear-gradient(150deg,#fff5d9 0 48%,#123d67 48% 75%,#06172a 75%);color:#173354;padding:16px;position:relative}
+.pack-card strong{font-size:17px;color:#8a5913}
+.pack-card small{display:block;margin-top:10px}
+.pack-code{display:inline-block;background:#e6b44b;padding:7px 10px;border-radius:5px;color:#091629;font-weight:bold;margin-top:14px}
+.qr{float:left;border:4px solid white;background:white;color:#111;padding:5px;font-size:43px;line-height:1}
+.features{list-style:none;padding:0;margin:0}
+.features li{padding:12px 0;border-top:1px solid #344253;line-height:1.8}
+.features li:first-child{border-top:0}
+.features li span{color:var(--gold);margin-left:8px}
+.info{margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+button{font-family:inherit;cursor:pointer}
+.outline{border:1px solid var(--gold);color:var(--gold);background:transparent;border-radius:9px;padding:12px}
+footer{margin-top:25px;border-top:1px solid var(--gold);padding:25px 5%;background:#03101e}
+.footgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+footer p{line-height:2;overflow-wrap:anywhere}
+footer a{color:var(--gold)}
+.center{text-align:center;color:var(--gold);margin-top:25px}
+#search{margin-top:22px}
+input{width:100%;padding:14px;border:1px solid var(--gold);border-radius:8px;background:#071322;color:white;font-size:16px;text-align:center;direction:ltr}
+.primary{width:100%;padding:14px;margin-top:10px;background:var(--gold);color:#091321;border:0;border-radius:8px;font-size:17px;font-weight:bold}
+#result{line-height:2;margin-top:15px}
+@media(max-width:700px){header{padding:15px;gap:8px}.logo{width:48px;height:58px;font-size:27px}.grid,.lower,.footgrid{grid-template-columns:1fr}.wrap{padding:15px 12px}.panel{padding:14px}.coin-art{min-height:250px}.banner{padding:22px 12px}.row{grid-template-columns:1fr 1.2fr}.info{align-items:flex-start}}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="logo">M</div>
-  <h1>بورس سکه مسروری</h1>
-  <p>سامانه استعلام مشخصات سکه</p>
 
-  <input id="serial" placeholder="مثال: MSR-000001" autocomplete="off">
-  <button onclick="checkCoin()">بررسی اصالت</button>
+<header>
+ <div class="brand">
+  <div class="logo">M</div>
+  <div>
+   <h1>بورس سکه مسروری</h1>
+   <p>سامانه استعلام اصالت سکه</p>
+  </div>
+ </div>
+ <div class="menu">☰</div>
+</header>
+
+<section class="banner">
+ <h2><span style="color:#64e883">●</span> استعلام اصالت سکه</h2>
+ <p>با وارد کردن شناسه یا اسکن QR، مشخصات ثبت‌شده سکه را مشاهده کنید.</p>
+</section>
+
+<main class="wrap">
+ <section id="search" class="panel">
+  <h3>🔎 استعلام شماره سریال</h3>
+  <input id="serial" placeholder="MSR-000001">
+  <button class="primary" onclick="checkCoin()">بررسی اصالت</button>
   <div id="result"></div>
-  <p><small>سامانه استعلام مشخصات ثبت‌شده</small></p>
-</div>
+ </section>
+
+ <section class="grid" style="margin-top:20px">
+  <div class="panel">
+   <h3>🪙 تصویر نمایشی سکه</h3>
+   <div class="coin-art">
+    <div class="coin">
+     <div class="stars">★　✦　★</div>
+     <div class="portrait">♛</div>
+     <strong>سکه مسروری</strong>
+     <div class="stars">★　✦　★</div>
+    </div>
+   </div>
+   <div class="thumbs">
+    <div class="thumb"><span>🪙</span>سکه</div>
+    <div class="thumb"><span>▣</span>پلمپ</div>
+    <div class="thumb"><span>▦</span>QR</div>
+    <div class="thumb"><span>♛</span>برند</div>
+   </div>
+  </div>
+
+  <div class="panel">
+   <h3>🛡️ مشخصات سکه</h3>
+   <div id="details">
+    <div class="row"><span>نوع سکه</span><span class="value">پس از استعلام نمایش داده می‌شود</span></div>
+    <div class="row"><span>وزن اسمی</span><span class="value">—</span></div>
+    <div class="row"><span>عیار</span><span class="value">—</span></div>
+    <div class="row"><span>شناسه پلمپ</span><span class="value">—</span></div>
+    <div class="row"><span>برند</span><span class="value">بورس سکه مسروری</span></div>
+    <div class="row"><span>وضعیت ثبت</span><span class="value">در انتظار استعلام</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="lower">
+  <div class="panel">
+   <h3>📦 تصویر بسته‌بندی و پلمپ</h3>
+   <div class="pack">
+    <div class="pack-card">
+     <div class="qr">▦</div>
+     <strong>بورس سکه مسروری</strong>
+     <small id="packType">بسته‌بندی سکه</small>
+     <small>وزن و عیار مطابق مشخصات ثبت‌شده</small>
+     <div class="pack-code" id="packCode">MSR-000001</div>
+    </div>
+   </div>
+   <p style="font-size:12px;line-height:2;color:#ccc">تصویر بالا طرح نمایشی است. برای نمایش عکس واقعی سکه و پلمپ، باید فایل تصاویر واقعی به سایت اضافه شود.</p>
+  </div>
+
+  <div class="panel">
+   <h3>🛡️ ویژگی‌های امنیتی بسته‌بندی</h3>
+   <ul class="features">
+    <li><span>✔</span>شناسه سریال اختصاصی</li>
+    <li><span>✔</span>کد QR برای دسترسی به صفحه استعلام</li>
+    <li><span>✔</span>نمایش مشخصات ثبت‌شده در سامانه</li>
+    <li><span>✔</span>اطلاعات برند و نوع سکه</li>
+    <li><span>✔</span>دسترسی سریع با تلفن همراه</li>
+   </ul>
+  </div>
+ </section>
+
+ <section class="panel info">
+  <div>
+   <h3>اطلاعات تکمیلی</h3>
+   <p style="line-height:2">اطلاعات نمایش داده‌شده مربوط به مشخصات ثبت‌شده در سامانه است. این استعلام به‌تنهایی اصالت فیزیکی سکه را تضمین نمی‌کند.</p>
+  </div>
+  <button class="outline" onclick="alert('برای راهنمایی بیشتر با مجموعه تماس بگیرید.')">راهنمای استعلام</button>
+ </section>
+</main>
+
+<footer>
+ <div class="footgrid">
+  <div><h3 style="color:var(--gold)">☎ تلفن تماس</h3><p>شماره تماس مجموعه را اینجا وارد کنید.</p></div>
+  <div><h3 style="color:var(--gold)">⌖ آدرس</h3><p>آدرس فروشگاه را اینجا وارد کنید.</p></div>
+  <div><h3 style="color:var(--gold)">◎ شبکه اجتماعی</h3><p>صفحه رسمی مجموعه را اینجا وارد کنید.</p></div>
+ </div>
+ <div class="center">✦　بورس سکه مسروری　✦</div>
+</footer>
 
 <script>
-const coins = {
- "MSR-000001": {type:"تمام سکه بانکی",karat:"۹۰۰",weight:"۸.۱۳۳ گرم"},
- "MSR-000002": {type:"نیم سکه بانکی",karat:"۹۰۰",weight:"۴.۰۶۶ گرم"},
- "MSR-000003": {type:"ربع سکه بانکی",karat:"۹۰۰",weight:"۲.۰۳۲ گرم"},
- "MSR-000004": {type:"تمام سکه عادی",karat:"۹۰۰",weight:"۸.۱۳۳ گرم"},
- "MSR-000005": {type:"نیم سکه عادی",karat:"۹۰۰",weight:"۴.۰۶۶ گرم"},
- "MSR-000006": {type:"ربع سکه عادی",karat:"۹۰۰",weight:"۲.۰۳۲ گرم"}
+const coins={
+ "MSR-000001":{type:"تمام سکه بانکی",weight:"۸.۱۳۳ گرم",karat:"۹۰۰ در هزار"},
+ "MSR-000002":{type:"نیم سکه بانکی",weight:"۴.۰۶۶ گرم",karat:"۹۰۰ در هزار"},
+ "MSR-000003":{type:"ربع سکه بانکی",weight:"۲.۰۳۲ گرم",karat:"۹۰۰ در هزار"},
+ "MSR-000004":{type:"تمام سکه عادی",weight:"۸.۱۳۳ گرم",karat:"۹۰۰ در هزار"},
+ "MSR-000005":{type:"نیم سکه عادی",weight:"۴.۰۶۶ گرم",karat:"۹۰۰ در هزار"},
+ "MSR-000006":{type:"ربع سکه عادی",weight:"۲.۰۳۲ گرم",karat:"۹۰۰ در هزار"}
 };
 
 function checkCoin(){
  const code=document.getElementById("serial").value.trim().toUpperCase();
  const c=coins[code];
- const r=document.getElementById("result");
+ const result=document.getElementById("result");
+ const details=document.getElementById("details");
 
  if(!c){
-  r.innerHTML='<p class="bad">❌ این کد در فهرست کدهای تعریف‌شده پیدا نشد.</p>';
+  result.innerHTML='<p style="color:#ff8585">❌ این کد در فهرست کدهای تعریف‌شده پیدا نشد.</p>';
   return;
  }
 
- r.innerHTML=`
- <h3 class="ok">✅ کد در سامانه ثبت شده است</h3>
- <p><b>نام مجموعه:</b> بورس سکه مسروری</p>
- <p><b>شماره سریال:</b> ${code}</p>
- <p><b>نوع سکه:</b> ${c.type}</p>
- <p><b>عیار ثبت‌شده:</b> ${c.karat}</p>
- <p><b>وزن ثبت‌شده:</b> ${c.weight}</p>
- <p><small>توجه: نمایش این اطلاعات به‌تنهایی تأیید فیزیکی اصالت سکه نیست.</small></p>`;
+ result.innerHTML='<p style="color:#65e88b;font-weight:bold">✅ این کد در سامانه ثبت شده است.</p>';
+ details.innerHTML=`
+ <div class="row"><span>نوع سکه</span><span class="value">${c.type}</span></div>
+ <div class="row"><span>وزن اسمی</span><span class="value">${c.weight}</span></div>
+ <div class="row"><span>عیار</span><span class="value">${c.karat}</span></div>
+ <div class="row"><span>شناسه پلمپ</span><span class="value">${code}</span></div>
+ <div class="row"><span>برند</span><span class="value">بورس سکه مسروری</span></div>
+ <div class="row"><span>وضعیت ثبت</span><span class="value"><span class="status">ثبت‌شده</span></span></div>`;
+ document.getElementById("packType").textContent=c.type;
+ document.getElementById("packCode").textContent=code;
 }
 
 document.getElementById("serial").addEventListener("keydown",e=>{
- if(e.key==="Enter") checkCoin();
+ if(e.key==="Enter")checkCoin();
 });
 
 const code=new URLSearchParams(location.search).get("code");
