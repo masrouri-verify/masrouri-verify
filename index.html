@@ -1,49 +1,398 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071a3a">
-<meta name="description" content="بورس سکه مسروری؛ مشاهده مشخصات و استعلام اطلاعات سکه‌های ثبت‌شده">
 <title>مسروری | بورس سکه و استعلام اصالت</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#071a3a;--navy2:#102c58;--gold:#c99a3b;--gold2:#f2d58e;--ink:#14233d;--muted:#718096;--paper:#f6f8fc;--white:#fff;--line:#e5eaf2;--green:#147d55;--shadow:0 18px 50px #071a3a12}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Vazirmatn,Tahoma,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.container{width:min(1160px,92%);margin:auto}.topbar{background:#04122a;color:#dbe4f4;font-size:12px;padding:7px 0}.topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.topbar strong{color:var(--gold2)}header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:13px;min-width:230px}.logo{width:58px;height:58px;border-radius:17px;background:linear-gradient(145deg,var(--navy2),var(--navy));border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font-size:29px;font-weight:900;box-shadow:0 0 0 4px #c99a3b18}.brand h1{font-size:22px;line-height:1.35;margin:0;color:var(--navy);font-weight:900}.brand p{margin:3px 0 0;color:#9a7026;font-size:11px;font-weight:800}.navlinks{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#44536c}.navlinks a:hover{color:#a87920}.nav-cta{background:var(--navy);color:#fff;padding:10px 17px;border-radius:12px;font-size:12px;font-weight:800;white-space:nowrap}.hero{background:radial-gradient(circle at 18% 20%,#193d70 0,transparent 36%),linear-gradient(120deg,#06152f,#102d58);color:white;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #d9b55d24;border-radius:50%;left:-160px;bottom:-250px;box-shadow:0 0 0 45px #d9b55d0a,0 0 0 95px #d9b55d08}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;min-height:420px;padding:46px 0;position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #d6b45d65;background:#d6b45d12;border-radius:999px;padding:5px 12px;color:var(--gold2);font-size:12px;font-weight:700}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px var(--gold)}.hero h2{font-size:clamp(30px,4.5vw,49px);line-height:1.45;margin:18px 0 12px;font-weight:900;letter-spacing:-1px}.hero h2 span{color:var(--gold2);display:block}.hero p{color:#d3dced;max-width:600px;font-size:14px;margin:0 0 25px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn-gold,.btn-outline{display:inline-flex;justify-content:center;align-items:center;gap:8px;border-radius:12px;padding:12px 18px;font-weight:800;font-size:13px;border:1px solid transparent}.btn-gold{background:linear-gradient(135deg,#f0d58f,#c99a3b);color:#1b2a43;box-shadow:0 8px 24px #c99a3b22}.btn-outline{border-color:#ffffff50;color:white}.hero-art{min-height:290px;position:relative;display:flex;align-items:center;justify-content:center}.hero-coin{position:absolute;object-fit:cover;border-radius:50%;border:5px solid #e8cb7d;background:#fff;box-shadow:0 20px 45px #0006;aspect-ratio:1}.hero-coin.main{width:218px;height:218px;z-index:3;transform:translate(-7px,-1px);object-position:50% 50%}.hero-coin.left{width:145px;height:145px;z-index:2;transform:translate(-120px,73px) rotate(-10deg)}.hero-coin.right{width:155px;height:155px;z-index:1;transform:translate(116px,-60px) rotate(9deg)}.hero-stamp{position:absolute;z-index:4;bottom:5px;right:6%;background:#fff;color:var(--navy);padding:10px 15px;border-radius:13px;box-shadow:var(--shadow);font-size:11px;font-weight:800}.hero-stamp b{color:#a87920;display:block;font-size:14px}.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-25px;position:relative;z-index:4}.trust-item{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}.trust-icon{width:42px;height:42px;border-radius:13px;background:#f8f0dd;color:#9d7429;display:grid;place-items:center;font-size:20px;flex-shrink:0}.trust-item strong{display:block;font-size:13px;color:var(--navy)}.trust-item small{font-size:11px;color:var(--muted)}section{padding:64px 0}.section-head{text-align:center;margin-bottom:28px}.section-head .kicker{color:#a87920;font-weight:900;font-size:12px}.section-head h2{margin:4px 0 7px;color:var(--navy);font-size:clamp(23px,3vw,32px);font-weight:900}.section-head p{margin:0;color:var(--muted);font-size:13px}.coin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.coin-card{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 7px 24px #071a3a08;transition:.2s}.coin-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#ddc17e}.coin-photo{height:190px;background:linear-gradient(135deg,#f4f6fa,#e9edf4);display:grid;place-items:center;padding:16px;position:relative}.coin-photo img{width:100%;height:100%;object-fit:contain}.coin-tag{position:absolute;top:12px;right:12px;background:#fff;color:#8a6724;border:1px solid #ead9ad;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:800}.coin-body{padding:17px}.coin-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.coin-title-row h3{font-size:17px;margin:0;color:var(--navy)}.coin-kind{font-size:10px;color:#8b6a2c;background:#fbf5e7;padding:4px 8px;border-radius:7px;white-space:nowrap}.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:15px 0}.spec{background:#f7f9fc;border:1px solid #edf0f5;border-radius:10px;padding:8px 10px}.spec small{display:block;font-size:10px;color:var(--muted)}.spec b{font-size:13px;color:var(--navy)}.serial{font-size:11px;color:#65748b;direction:ltr;text-align:right;margin:4px 0 14px}.card-actions{display:grid;grid-template-columns:1fr 46px;gap:9px}.details-btn{border:0;background:var(--navy);color:#fff;border-radius:11px;font-size:12px;font-weight:800;padding:11px}.qr-btn{border:1px solid #d9c38b;background:#fffaf0;color:#8a6724;border-radius:11px;font-size:18px}.result-section{padding-top:12px}.result-box{display:none;background:#fff;border:1px solid #d9c58d;border-radius:22px;box-shadow:var(--shadow);padding:24px;max-width:850px;margin:0 auto}.result-box.show{display:block;animation:rise .3s ease}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.result-head{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:18px}.result-head h2{font-size:23px;color:var(--navy);margin:0}.verified{font-size:11px;font-weight:800;color:var(--green);background:#e9f7f0;padding:7px 11px;border-radius:999px;white-space:nowrap}.result-layout{display:grid;grid-template-columns:1fr 170px;gap:22px;align-items:center}.result-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.result-spec{border:1px solid var(--line);background:#fafbfd;border-radius:12px;padding:12px}.result-spec span{display:block;font-size:11px;color:var(--muted)}.result-spec b{font-size:15px;color:var(--navy)}.result-qr{width:160px;max-width:100%;border:1px solid var(--line);border-radius:12px;padding:8px;background:white}.notice{font-size:11px;color:var(--muted);margin:16px 0 0}.empty-result{display:none;text-align:center;color:#8a3b3b;background:#fff;border:1px solid #f0cccc;border-radius:15px;padding:20px;max-width:850px;margin:0 auto}.empty-result.show{display:block}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:22px;background:white;border:1px solid var(--line);border-radius:17px}.step-num{font-size:12px;font-weight:900;color:#a87920}.step h3{font-size:16px;color:var(--navy);margin:6px 0}.step p{font-size:12px;color:var(--muted);margin:0}.contact{background:#fff;border-top:1px solid var(--line)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.contact h2{color:var(--navy);font-size:27px;margin:0 0 10px}.contact p{color:var(--muted);font-size:13px}.contact-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fafbfd}.contact-line{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.contact-line:last-child{border:0}.contact-line strong{color:var(--navy);margin-left:8px}footer{background:#04122a;color:#c6d1e4;padding:24px 0;font-size:11px}footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer strong{color:var(--gold2)}.toast{position:fixed;bottom:20px;left:20px;background:#102c58;color:#fff;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:50;display:none;font-size:12px}.toast.show{display:block}
-@media(max-width:850px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr;gap:5px;padding:40px 0 48px}.hero-copy{text-align:center}.hero-copy p{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-art{min-height:245px;grid-row:1}.hero-coin.main{width:175px;height:175px}.hero-coin.left{width:115px;height:115px;transform:translate(-92px,55px) rotate(-10deg)}.hero-coin.right{width:120px;height:120px;transform:translate(92px,-45px) rotate(9deg)}.hero-stamp{right:8%;bottom:0}.coin-grid{grid-template-columns:repeat(2,1fr)}.trust-row{margin-top:-18px}.trust-item{padding:12px}.contact-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.topbar .container{justify-content:center;text-align:center}.topbar .container span:last-child{display:none}.nav{min-height:76px}.logo{width:49px;height:49px;border-radius:14px;font-size:24px}.brand h1{font-size:19px}.nav-cta{padding:9px 11px;font-size:11px}.hero h2{font-size:31px}.hero p{font-size:12px}.trust-row{grid-template-columns:1fr;gap:8px}.trust-item{padding:10px 14px}.trust-icon{width:37px;height:37px}.trust-item small{font-size:10px}section{padding:48px 0}.coin-grid{grid-template-columns:1fr;gap:14px}.coin-photo{height:210px}.result-box{padding:16px}.result-head{align-items:flex-start;flex-direction:column}.result-layout{grid-template-columns:1fr}.result-qr-wrap{text-align:center;order:-1}.result-qr{width:130px}.result-specs{gap:8px}.result-spec{padding:10px}.result-spec b{font-size:13px}.steps{grid-template-columns:1fr}.section-head p{padding:0 10px}}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --navy:#071a3a;
+  --navy2:#102c58;
+  --gold:#d5a64b;
+  --light:#f5f8fc;
+  --ink:#132748;
+  --muted:#718096;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#f7f9fc;color:var(--ink);
+  font-family:'Vazirmatn',Tahoma,sans-serif
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topbar{
+  background:var(--navy);color:white;padding:12px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;font-size:13px
+}
+.topbar a{color:#f3cc7c}
+.nav{
+  background:white;display:flex;align-items:center;
+  justify-content:space-between;padding:15px 5%;
+  gap:20px;box-shadow:0 4px 18px #071a3a0c
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:55px;height:55px;border-radius:50%;
+  display:grid;place-items:center;background:var(--navy);
+  color:var(--gold);border:2px solid var(--gold);
+  font-size:31px;font-weight:900;box-shadow:0 0 0 4px #d5a64b22
+}
+.brand strong{font-size:23px;color:var(--navy)}
+.brand small{display:block;color:var(--muted);font-size:12px}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:14px}
+.navlinks a:hover{color:#b47c1c}
+.btn{
+  border:0;border-radius:14px;padding:12px 20px;
+  background:var(--navy);color:white;cursor:pointer;
+  font-weight:700;display:inline-flex;align-items:center;
+  justify-content:center;gap:8px;transition:.2s
+}
+.btn:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn.gold{background:linear-gradient(120deg,#f4d28c,#c18a2e);color:var(--navy)}
+.hero{
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 20% 20%,#183d70 0,transparent 43%),
+  linear-gradient(120deg,#06152e,#0c2850 65%,#06152e);
+  color:white;padding:65px 6%;min-height:330px;
+  display:grid;grid-template-columns:1.1fr .9fr;
+  align-items:center;gap:35px
+}
+.hero:before{
+  content:"";position:absolute;width:400px;height:400px;
+  border:1px solid #d5a64b55;border-radius:50%;
+  left:-140px;top:-180px;box-shadow:0 0 0 30px #d5a64b08,0 0 0 65px #d5a64b08
+}
+.eyebrow{color:#f2c46e;font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.6;margin:12px 0}
+.hero h1 span{color:#f0c36d}
+.hero p{line-height:2;color:#e2e9f5;max-width:580px;font-size:14px}
+.hero-art{display:flex;justify-content:center;align-items:center;position:relative;min-height:220px}
+.coin-art{
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle at 30% 25%,#fff1a7,#dba43d 38%,#8d5717 62%,#f5d478 70%,#9a651e 78%,#eac35e);
+  border:6px double #f9dfa0;box-shadow:0 15px 35px #0008,inset 0 0 0 5px #8e601d;
+  display:grid;place-items:center;color:#72420d;font-size:78px;font-weight:900;
+  text-shadow:1px 2px #ffe5a2;transform:rotate(-12deg)
+}
+.coin-art.second{width:112px;height:112px;font-size:52px;transform:translate(28px,48px) rotate(12deg)}
+.features{
+  background:white;display:grid;grid-template-columns:repeat(4,1fr);
+  padding:28px 5%;gap:12px;border-bottom:1px solid #e7edf5
+}
+.feature{text-align:center;padding:10px;border-left:1px solid #e8edf4}
+.feature:last-child{border-left:0}
+.feature .ico{font-size:28px;color:#b47c1c}
+.feature strong{display:block;margin:6px 0}
+.feature small{color:var(--muted);font-size:12px}
+.section{padding:48px 5%}
+.section-head{text-align:center;margin-bottom:28px}
+.section-head .eyebrow{color:#a87520}
+.section-head h2{margin:7px 0;font-size:30px;color:var(--navy)}
+.section-head p{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{
+  background:white;border:1px solid #e1e8f1;border-radius:20px;
+  padding:16px;box-shadow:0 8px 25px #102c5808;
+  transition:.25s;overflow:hidden
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #102c5814;border-color:#d5a64b}
+.card-top{display:flex;gap:14px;align-items:center}
+.coin-photo{
+  width:125px;height:130px;flex-shrink:0;border-radius:15px;
+  background:linear-gradient(145deg,#edf3fb,#fff);
+  display:grid;place-items:center;overflow:hidden;
+  border:1px solid #edf0f5
+}
+.coin-photo img{width:100%;height:100%;object-fit:contain}
+.coin-fallback{
+  width:95px;height:95px;border-radius:50%;
+  display:grid;place-items:center;font-size:42px;color:#8d5918;
+  background:radial-gradient(circle at 30% 25%,#fff0a3,#dba33e 45%,#a66b21 68%,#f5d77b 75%,#a36b1f);
+  border:5px double #f7dda0;box-shadow:0 5px 14px #0002
+}
+.card-info{flex:1;min-width:0}
+.card h3{font-size:17px;margin:0 0 10px;color:var(--navy)}
+.serial{
+  display:inline-block;background:#fff1d2;color:#775016;
+  border-radius:7px;padding:4px 8px;font-size:12px;font-weight:800;
+  direction:ltr
+}
+.spec{font-size:13px;line-height:2.1;color:#455873;margin-top:8px}
+.card-bottom{display:flex;align-items:center;gap:12px;margin-top:15px}
+.qr{
+  width:76px;height:76px;object-fit:contain;background:white;
+  padding:4px;border:1px solid #e3e8f0;border-radius:9px
+}
+.qr-text{font-size:10px;color:var(--muted);text-align:center;margin-top:4px}
+.card-bottom .btn{flex:1;padding:11px 8px;font-size:12px}
+.detail-wrap{padding:0 5% 42px;scroll-margin-top:20px}
+.detail{
+  display:none;background:linear-gradient(130deg,#06162f,#102f5c);
+  color:white;border:1px solid #d5a64b;border-radius:24px;
+  padding:30px;box-shadow:0 15px 40px #071a3a20
+}
+.detail.visible{display:block}
+.detail h2{margin-top:0}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.detail-item{padding:15px;border:1px solid #ffffff26;border-radius:12px;background:#ffffff08}
+.detail-item small{display:block;color:#c7d5e8;margin-bottom:6px}
+.detail-item strong{font-size:18px;color:#f5cc78}
+.detail-note{font-size:12px;line-height:2;color:#d7e1f1}
+.lookup{
+  margin:0 5% 50px;padding:30px;border-radius:22px;
+  background:linear-gradient(120deg,#06162f,#102f5c);color:white;
+  display:grid;grid-template-columns:1fr 1.2fr;gap:25px;align-items:center;
+  border:1px solid #d5a64b
+}
+.lookup h2{margin-top:0}
+.lookup p{color:#d6e0ef;font-size:13px;line-height:2}
+.lookup-form{display:flex;gap:10px}
+.lookup input{
+  min-width:0;flex:1;border:1px solid #dbe3ef;
+  border-radius:12px;padding:13px 15px;background:white;color:var(--navy);
+  direction:ltr;text-align:left
+}
+.lookup-result{font-size:13px;color:#f4ce80;margin-top:12px;line-height:2}
+footer{background:#041329;color:white;padding:28px 5%}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+footer p{font-size:12px;color:#d5deec;line-height:2}
+footer a{color:#f1c46d}
+.footer-bottom{border-top:1px solid #ffffff25;margin-top:20px;padding-top:15px;text-align:center;font-size:12px;color:#c5d1e3}
+.notice{font-size:11px;color:#d8e1ef;margin-top:15px;line-height:2}
+@media(max-width:850px){
+ .hero{grid-template-columns:1fr;padding:38px 6%;text-align:center}
+ .hero-art{min-height:180px;grid-row:1}
+ .coin-art{width:130px;height:130px;font-size:60px}
+ .coin-art.second{width:90px;height:90px;font-size:42px}
+ .hero p{margin-inline:auto}
+ .nav{flex-wrap:wrap}
+ .navlinks{order:3;width:100%;justify-content:center;gap:16px;flex-wrap:wrap}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .features{grid-template-columns:repeat(2,1fr)}
+ .feature:nth-child(2){border-left:0}
+ .lookup{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .topbar{justify-content:center;text-align:center}
+ .brand strong{font-size:20px}
+ .grid{grid-template-columns:1fr}
+ .card-top{gap:12px}
+ .coin-photo{width:120px;height:125px}
+ .section{padding:35px 4%}
+ .section-head h2{font-size:25px}
+ .detail{padding:20px}
+ .detail-grid{grid-template-columns:1fr 1fr}
+ .lookup{margin-inline:4%;padding:22px}
+ .lookup-form{flex-direction:column}
+ .lookup-form .btn{width:100%}
+ .features{padding-inline:3%}
+ .navlinks{font-size:12px}
+}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><span>بورس سکه <strong>مسروری</strong> | همراه شما در خرید مطمئن‌تر</span><span>بروجن · <strong>پاسخ‌گویی و راهنمایی</strong></span></div></div>
-<header><div class="container nav"><a class="brand" href="#home" aria-label="صفحه اصلی مسروری"><div class="logo">م</div><div><h1>مسروری</h1><p>بورس سکه و استعلام اطلاعات</p></div></a><nav class="navlinks"><a href="#home">صفحه اصلی</a><a href="#coins">سکه‌ها</a><a href="#verify">استعلام اصالت</a><a href="#how">راهنمای استعلام</a><a href="#contact">تماس با ما</a></nav><a class="nav-cta" href="#coins">مشاهده سکه‌ها ←</a></div></header>
-<main id="home">
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">شفافیت در مشخصات، اعتماد در معامله</span><h2>بورس سکه <span>مسروری</span></h2><p>مشخصات سکه‌های ثبت‌شده را مشاهده کنید. با اسکن QR اختصاصی هر سکه، به صفحه همان شناسه و اطلاعات درج‌شده برای آن هدایت می‌شوید.</p><div class="hero-actions"><a class="btn-gold" href="#coins">مشاهده سکه‌ها <span>↙</span></a><a class="btn-outline" href="#verify">استعلام با شناسه</a></div></div><div class="hero-art" aria-label="تصاویر سکه‌های ایرانی"><img class="hero-coin left" src="https://commons.wikimedia.org/wiki/Special:FilePath/Half_Azadi_gold_coin_1358.jpg" alt="تصویر سکه ایرانی" onerror="this.style.display='none'"><img class="hero-coin main" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bahar_Azadi_Coin.jpg" alt="سکه بهار آزادی" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Azadi_Gold_Coin_1370.jpg'"><img class="hero-coin right" src="https://commons.wikimedia.org/wiki/Special:FilePath/Quarter_Azadi_gold_coin.jpg" alt="تصویر سکه ربع ایرانی" onerror="this.style.display='none'"><div class="hero-stamp">مسروری <b>اطلاعات سکه، روشن و قابل بررسی</b></div></div></div></section>
-<div class="container trust-row"><div class="trust-item"><div class="trust-icon">⌕</div><div><strong>شناسه اختصاصی</strong><small>هر نوع سکه دارای کد مشخص است</small></div></div><div class="trust-item"><div class="trust-icon">▤</div><div><strong>مشخصات شفاف</strong><small>وزن و عیار در صفحه استعلام</small></div></div><div class="trust-item"><div class="trust-icon">▦</div><div><strong>QR اختصاصی</strong><small>دسترسی سریع به صفحه همان سکه</small></div></div></div>
-<section id="coins"><div class="container"><div class="section-head"><span class="kicker">فهرست محصولات</span><h2>سکه‌های مسروری</h2><p>برای دیدن مشخصات یا ساخت QR اختصاصی هر شناسه، گزینه مربوط را انتخاب کنید.</p></div><div class="coin-grid" id="coinGrid"></div></div></section>
-<section id="verify" class="result-section"><div class="container"><div class="section-head"><span class="kicker">بررسی شناسه</span><h2>استعلام مشخصات سکه</h2><p>شناسه درج‌شده روی کارت یا برچسب را وارد کنید تا اطلاعات همان مورد نمایش داده شود.</p></div><form id="verifyForm" style="display:flex;gap:10px;max-width:560px;margin:0 auto 22px"><input id="coinIdInput" aria-label="شناسه سکه" placeholder="مثلاً MSR-000006" style="min-width:0;flex:1;border:1px solid #dce3ee;border-radius:12px;padding:13px 15px;font:inherit;font-size:13px;direction:ltr;text-align:left;background:#fff" required><button class="details-btn" type="submit">استعلام شناسه</button></form><div id="resultBox" class="result-box" aria-live="polite"></div><div id="emptyResult" class="empty-result">این شناسه در فهرست فعلی پیدا نشد. لطفاً کد را بررسی کنید.</div></div></section>
-<section id="how" style="background:#eef2f8"><div class="container"><div class="section-head"><span class="kicker">راهنمای استفاده</span><h2>چطور استعلام بگیریم؟</h2><p>سه مرحله ساده برای مشاهده اطلاعات ثبت‌شده سکه</p></div><div class="steps"><article class="step"><span class="step-num">مرحله ۰۱</span><h3>QR را اسکن کنید</h3><p>دوربین گوشی را روی QR اختصاصی قرار دهید تا صفحه مربوط به شناسه باز شود.</p></article><article class="step"><span class="step-num">مرحله ۰۲</span><h3>شناسه را بررسی کنید</h3><p>نام سکه، شناسه، وزن و عیار نمایش‌داده‌شده را با اطلاعات روی بسته‌بندی تطبیق دهید.</p></article><article class="step"><span class="step-num">مرحله ۰۳</span><h3>در صورت مغایرت پیگیری کنید</h3><p>اگر اطلاعات مطابقت نداشت، پیش از اتکا به نتیجه با مجموعه تماس بگیرید.</p></article></div></div></section>
-<section id="contact" class="contact"><div class="container contact-grid"><div><span class="kicker" style="color:#a87920;font-size:12px;font-weight:900">ارتباط با مسروری</span><h2>پاسخ‌گویی و راهنمایی</h2><p>برای پرسش درباره مشخصات ثبت‌شده یا گزارش مغایرت اطلاعات، از راه‌های ارتباطی زیر استفاده کنید.</p><a class="btn-gold" href="https://instagram.com/Bourse_seke_marouri" target="_blank" rel="noopener">صفحه اینستاگرام ↗</a></div><div class="contact-card"><div class="contact-line"><strong>تلفن همراه:</strong><a href="tel:09131839848">09131839848</a></div><div class="contact-line"><strong>تلفن ثابت:</strong><a href="tel:03834236539">038-34236539</a></div><div class="contact-line"><strong>نشانی:</strong> بروجن، خیابان طالقانی میانی، قبل از بانک ملت</div><div class="contact-line"><strong>اینستاگرام:</strong><a href="https://instagram.com/Bourse_seke_marouri" target="_blank" rel="noopener">@Bourse_seke_marouri</a></div></div></div></section>
-</main><footer><div class="container"><span>© <span id="year"></span> <strong>مسروری</strong> · بورس سکه و استعلام اطلاعات</span><span>اطلاعات این صفحه بر اساس فهرست ثبت‌شده سایت نمایش داده می‌شود.</span></div></footer><div class="toast" id="toast" role="status"></div>
+
+<div class="topbar">
+  <span>📷 <a href="https://instagram.com/Bourse_seke_marouri" target="_blank" rel="noopener">Bourse_seke_marouri</a></span>
+  <span>☎ <a href="tel:09131839848">09131839848</a></span>
+  <span>☎ <a href="tel:03834236539">038-34236539</a></span>
+  <span>📍 چهارمحال و بختیاری، بروجن، خیابان طالقانی میانی، نرسیده به بانک ملت</span>
+</div>
+
+<header class="nav">
+  <a class="brand" href="#home">
+    <span class="logo">M</span>
+    <span><strong>مسروری</strong><small>بورس سکه و استعلام اصالت</small></span>
+  </a>
+  <nav class="navlinks">
+    <a href="#home">صفحه اصلی</a>
+    <a href="#coins">سکه‌ها</a>
+    <a href="#lookup">استعلام اصالت</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
+  <a class="btn" href="#lookup">استعلام سکه</a>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">اصالت • اعتماد • سرمایه</div>
+    <h1>بورس سکه مسروری<br><span>استعلام اصالت</span></h1>
+    <p>سکه مورد نظر خود را انتخاب کنید و مشخصات آن را ببینید. هر شناسه به اطلاعات همان سکه متصل است تا بررسی مشخصات ساده‌تر باشد.</p>
+    <a class="btn gold" href="#coins">مشاهده سکه‌ها　↙</a>
+  </div>
+  <div class="hero-art" aria-label="طرح تزئینی سکه">
+    <div class="coin-art second">م</div>
+    <div class="coin-art">م</div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature"><div class="ico">♧</div><strong>پشتیبانی</strong><small>همراه شما در مسیر خرید</small></div>
+  <div class="feature"><div class="ico">♢</div><strong>تضمین اصالت</strong><small>نمایش مشخصات ثبت‌شده</small></div>
+  <div class="feature"><div class="ico">▦</div><strong>شناسه اختصاصی</strong><small>هر سکه دارای کد مشخص</small></div>
+  <div class="feature"><div class="ico">◈</div><strong>اطلاعات شفاف</strong><small>شناسه، وزن و عیار</small></div>
+</section>
+
+<main>
+<section class="section" id="coins">
+  <div class="section-head">
+    <div class="eyebrow">مجموعه مسروری</div>
+    <h2>انواع سکه‌های مسروری</h2>
+    <p>برای مشاهده جزئیات، روی سکه بزنید یا QR اختصاصی همان سکه را اسکن کنید.</p>
+  </div>
+  <div class="grid" id="coinGrid"></div>
+</section>
+
+<section class="detail-wrap" id="detailArea">
+  <div class="detail" id="detail">
+    <div class="eyebrow">استعلام مشخصات سکه</div>
+    <h2 id="detailTitle">مشخصات سکه</h2>
+    <div class="detail-grid" id="detailGrid"></div>
+    <p class="detail-note">این صفحه مشخصات تعریف‌شده برای شناسه انتخاب‌شده را نمایش می‌دهد. نمایش این اطلاعات به‌تنهایی تأیید کارشناسی یا اصالت فیزیکی سکه محسوب نمی‌شود.</p>
+    <button class="btn gold" onclick="closeDetail()">بستن مشخصات</button>
+  </div>
+</section>
+
+<section class="lookup" id="lookup">
+  <div>
+    <div class="eyebrow">استعلام سریع</div>
+    <h2>شناسه سکه را وارد کنید</h2>
+    <p>شناسه روی بسته‌بندی سکه را وارد کنید تا اطلاعات مربوط به همان شناسه نمایش داده شود.</p>
+  </div>
+  <div>
+    <form class="lookup-form" id="lookupForm">
+      <input id="serialInput" placeholder="مثلاً MSR-000006" autocomplete="off" required>
+      <button class="btn gold" type="submit">مشاهده مشخصات ←</button>
+    </form>
+    <div class="lookup-result" id="lookupMessage" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="footer-row">
+    <div class="brand">
+      <span class="logo">M</span>
+      <span><strong style="color:#f2c46e">مسروری</strong><small style="color:#d5deec">بورس سکه</small></span>
+    </div>
+    <div>
+      <p>☎ تماس همراه: <a href="tel:09131839848">09131839848</a><br>
+      ☎ تلفن: <a href="tel:03834236539">038-34236539</a></p>
+    </div>
+    <div>
+      <p>📍 چهارمحال و بختیاری، شهرستان بروجن<br>خیابان طالقانی میانی، نرسیده به بانک ملت</p>
+      <p>📷 اینستاگرام: <a href="https://instagram.com/Bourse_seke_marouri" target="_blank" rel="noopener">Bourse_seke_marouri</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">بورس سکه مسروری　•　اصالت، اعتماد، سرمایه</div>
+</footer>
+
 <script>
-const siteBase = 'https://masrouri-verify.github.io/masrouri-verify/';
+const SITE_URL = "https://masrouri-verify.github.io/masrouri-verify/";
+
 const coins = [
- {id:'MSR-000006',name:'ربع سکه عادی',kind:'عادی',weight:'۲٫۰۳۳ گرم',assay:'۹۰۰',image:'masrouri-assets/rob-adi-MSR-000006.jpg'},
- {id:'MSR-000005',name:'نیم سکه عادی',kind:'عادی',weight:'۴٫۰۶۶ گرم',assay:'۹۰۰',image:'masrouri-assets/nim-adi-MSR-000005.jpg'},
- {id:'MSR-000004',name:'تمام سکه عادی',kind:'عادی',weight:'۸٫۱۳۳ گرم',assay:'۹۰۰',image:'masrouri-assets/tamam-adi-MSR-000004.jpg'},
- {id:'MSR-000003',name:'ربع سکه بانکی',kind:'بانکی',weight:'۲٫۰۳۳ گرم',assay:'۹۰۰',image:'masrouri-assets/rob-banki-MSR-000003.jpg'},
- {id:'MSR-000002',name:'نیم سکه بانکی',kind:'بانکی',weight:'۴٫۰۶۶ گرم',assay:'۹۰۰',image:'masrouri-assets/nim-banki-MSR-000002.jpg'},
- {id:'MSR-000001',name:'تمام سکه بانکی',kind:'بانکی',weight:'۸٫۱۳۳ گرم',assay:'۹۰۰',image:'masrouri-assets/tamam-banki-MSR-000001.jpg'}
+  {id:"MSR-000006",name:"ربع سکه عادی",weight:"۲٫۰۳۳",type:"عادی",image:""},
+  {id:"MSR-000005",name:"نیم سکه عادی",weight:"۴٫۰۶۶",type:"عادی",image:""},
+  {id:"MSR-000004",name:"تمام سکه عادی",weight:"۸٫۱۳۳",type:"عادی",image:""},
+  {id:"MSR-000003",name:"ربع سکه بانکی",weight:"۲٫۰۳۳",type:"بانکی",image:"rob-bank-front.jpg"},
+  {id:"MSR-000002",name:"نیم سکه بانکی",weight:"۴٫۰۶۶",type:"بانکی",image:"nim-bank-front.jpg"},
+  {id:"MSR-000001",name:"تمام سکه بانکی",weight:"۸٫۱۳۳",type:"بانکی",image:"tamam-bank-front.jpg"}
 ];
-const byId = id => coins.find(c => c.id.toUpperCase() === String(id || '').trim().toUpperCase());
-function qrUrl(id,size=220){const target=siteBase+'?id='+encodeURIComponent(id);return 'https://api.qrserver.com/v1/create-qr-code/?size='+size+'x'+size+'&margin=8&data='+encodeURIComponent(target)}
-function fallbackImage(img){img.onerror=null;img.src='https://commons.wikimedia.org/wiki/Special:FilePath/Bahar_Azadi_Coin.jpg';img.style.objectFit='contain'}
-function renderCards(){document.getElementById('coinGrid').innerHTML=coins.map(c=>`<article class="coin-card"><div class="coin-photo"><span class="coin-tag">${c.kind==='بانکی'?'سکه بانکی':'سکه عادی'}</span><img src="${c.image}" alt="${c.name}" loading="lazy" onerror="fallbackImage(this)"></div><div class="coin-body"><div class="coin-title-row"><h3>${c.name}</h3><span class="coin-kind">عیار ${c.assay}</span></div><div class="specs"><div class="spec"><small>وزن</small><b>${c.weight}</b></div><div class="spec"><small>عیار</small><b>${c.assay}</b></div></div><div class="serial">شناسه: ${c.id}</div><div class="card-actions"><button class="details-btn" onclick="showCoin('${c.id}',true)">مشاهده مشخصات</button><button class="qr-btn" title="نمایش QR" aria-label="نمایش QR ${c.name}" onclick="showCoin('${c.id}',true,true)">▦</button></div></div></article>`).join('')}
-function showCoin(id,updateUrl=false,scroll=true){const c=byId(id);const box=document.getElementById('resultBox');const empty=document.getElementById('emptyResult');if(!c){box.classList.remove('show');empty.classList.add('show');if(scroll)document.getElementById('verify').scrollIntoView({behavior:'smooth'});return}empty.classList.remove('show');box.innerHTML=`<div class="result-head"><div><h2>${c.name}</h2><div class="serial">شناسه اختصاصی: ${c.id}</div></div><span class="verified">✓ اطلاعات ثبت‌شده</span></div><div class="result-layout"><div class="result-specs"><div class="result-spec"><span>نوع سکه</span><b>${c.name}</b></div><div class="result-spec"><span>شناسه</span><b>${c.id}</b></div><div class="result-spec"><span>وزن ثبت‌شده</span><b>${c.weight}</b></div><div class="result-spec"><span>عیار ثبت‌شده</span><b>${c.assay}</b></div><div class="result-spec"><span>گروه</span><b>${c.kind}</b></div><div class="result-spec"><span>وضعیت صفحه</span><b>نمایش مشخصات</b></div></div><div class="result-qr-wrap"><img class="result-qr" src="${qrUrl(c.id,180)}" alt="QR اختصاصی ${c.name}"><div style="font-size:10px;color:#718096;margin-top:6px">QR مربوط به ${c.id}</div></div></div><p class="notice">توجه: این صفحه مشخصات ثبت‌شده در سایت را نمایش می‌دهد و به‌تنهایی تأیید قطعی اصالت فیزیکی سکه یا اتصال به پایگاه داده مستقل نیست.</p>`;box.classList.add('show');document.getElementById('coinIdInput').value=c.id;if(updateUrl){const u=new URL(window.location.href);u.searchParams.set('id',c.id);history.replaceState({},'',u)}if(scroll)document.getElementById('verify').scrollIntoView({behavior:'smooth',block:'start'})}
-document.getElementById('verifyForm').addEventListener('submit',e=>{e.preventDefault();showCoin(document.getElementById('coinIdInput').value,true,true)});
-document.getElementById('year').textContent=new Date().getFullYear();renderCards();const initialId=new URLSearchParams(location.search).get('id');if(initialId){showCoin(initialId,false,false);setTimeout(()=>document.getElementById('verify').scrollIntoView({behavior:'smooth',block:'start'}),250)}
+
+function coinURL(coin){
+  return SITE_URL + "?id=" + encodeURIComponent(coin.id);
+}
+function qrURL(coin){
+  return "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=" + encodeURIComponent(coinURL(coin));
+}
+function renderCoins(){
+  const grid=document.getElementById("coinGrid");
+  grid.innerHTML=coins.map(coin=>{
+    const photo=coin.image
+      ? `<img src="${coin.image}" alt="${coin.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">`
+      : "";
+    return `
+      <article class="card">
+        <div class="card-top">
+          <div class="coin-photo">
+            ${photo}
+            <div class="coin-fallback" style="${coin.image?'display:none':''}">م</div>
+          </div>
+          <div class="card-info">
+            <h3>${coin.name}</h3>
+            <span class="serial">${coin.id}</span>
+            <div class="spec">
+              ⚖ وزن: ${coin.weight} گرم<br>
+              ◈ عیار: ۹۰۰
+            </div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <div>
+            <a href="${coinURL(coin)}" aria-label="باز کردن صفحه ${coin.name}">
+              <img class="qr" src="${qrURL(coin)}" alt="QR اختصاصی ${coin.name}" loading="lazy">
+            </a>
+            <div class="qr-text">QR اختصاصی</div>
+          </div>
+          <button class="btn" onclick="showCoin('${coin.id}')">مشاهده مشخصات ←</button>
+        </div>
+      </article>`;
+  }).join("");
+}
+function showCoin(id, updateURL=false){
+  const coin=coins.find(c=>c.id.toUpperCase()===String(id).trim().toUpperCase());
+  const message=document.getElementById("lookupMessage");
+  if(!coin){
+    message.textContent="این شناسه در فهرست سکه‌ها پیدا نشد. کد را بررسی کنید.";
+    return;
+  }
+  document.getElementById("detailTitle").textContent=coin.name;
+  document.getElementById("detailGrid").innerHTML=`
+    <div class="detail-item"><small>نوع سکه</small><strong>${coin.name}</strong></div>
+    <div class="detail-item"><small>شناسه اختصاصی</small><strong>${coin.id}</strong></div>
+    <div class="detail-item"><small>وزن</small><strong>${coin.weight} گرم</strong></div>
+    <div class="detail-item"><small>عیار</small><strong>۹۰۰</strong></div>
+    <div class="detail-item"><small>دسته‌بندی</small><strong>سکه ${coin.type}</strong></div>
+    <div class="detail-item"><small>شناسه صفحه</small><strong>${coin.id}</strong></div>`;
+  document.getElementById("detail").classList.add("visible");
+  document.getElementById("serialInput").value=coin.id;
+  message.textContent="مشخصات " + coin.name + " نمایش داده شد.";
+  if(updateURL){
+    history.pushState({}, "", "?id="+encodeURIComponent(coin.id));
+  }
+  document.getElementById("detailArea").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function closeDetail(){
+  document.getElementById("detail").classList.remove("visible");
+  history.pushState({}, "", location.pathname);
+}
+document.getElementById("lookupForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  showCoin(document.getElementById("serialInput").value,true);
+});
+window.addEventListener("popstate",()=>{
+  const id=new URLSearchParams(location.search).get("id");
+  if(id) showCoin(id,false);
+  else document.getElementById("detail").classList.remove("visible");
+});
+renderCoins();
+
+/* با ورود به لینک QR، همان سکه خودکار نمایش داده می‌شود. */
+const initialID=new URLSearchParams(location.search).get("id");
+if(initialID){
+  const matched=coins.find(c=>c.id===initialID.toUpperCase());
+  if(matched){
+    showCoin(matched.id,false);
+  }else{
+    document.getElementById("lookupMessage").textContent="شناسه موجود نیست.";
+  }
+}
 </script>
 </body>
 </html>
