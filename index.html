@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071a3a">
-<meta name="description" content="بورس سکه مسروری؛ مشاهده مشخصات سکه، شناسه اختصاصی و استعلام آنلاین اطلاعات سکه‌ها.">
-<title>مسروری | بورس سکه و استعلام اصالت</title>
+<meta name="description" content="بورس سکه مسروری | سامانه استعلام اصالت سکه، مشاهده مشخصات و شناسه اختصاصی سکه‌ها">
+<title>بورس سکه مسروری | سامانه استعلام اصالت سکه</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
@@ -15,6 +15,7 @@
   --navy:#071a3a;
   --navy2:#102c58;
   --gold:#d5a64b;
+  --gold-light:#f6d98d;
   --light:#f5f8fc;
   --ink:#132748;
   --muted:#718096;
@@ -30,31 +31,39 @@ button,input{font:inherit}
 button{cursor:pointer}
 
 .topbar{
-  background:var(--navy);color:white;padding:12px 5%;
+  background:var(--navy);color:white;padding:11px 5%;
   display:flex;justify-content:space-between;align-items:center;
   gap:12px;flex-wrap:wrap;font-size:12px
 }
-.topbar a{color:#f3cc7c}
+.topbar a{color:var(--gold-light)}
 .nav{
   background:white;display:flex;align-items:center;
   justify-content:space-between;padding:15px 5%;
-  gap:20px;box-shadow:0 4px 18px #071a3a0c
+  gap:18px;box-shadow:0 4px 18px #071a3a0c
 }
-.brand{display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
 .logo{
-  width:55px;height:55px;border-radius:50%;
-  display:grid;place-items:center;background:var(--navy);
-  color:var(--gold);border:2px solid var(--gold);
-  font-size:31px;font-weight:900
+  width:70px;height:70px;min-width:70px;border-radius:19px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,#123665,#041329);
+  border:1px solid var(--gold);
+  box-shadow:0 5px 18px #071a3a20;overflow:hidden
 }
-.brand strong{font-size:23px;color:var(--navy)}
-.brand small{display:block;color:var(--muted);font-size:12px}
-.navlinks{display:flex;gap:22px;align-items:center;font-size:13px}
+.logo svg{width:62px;height:62px;display:block}
+.brand-copy{display:flex;flex-direction:column;gap:4px}
+.brand-copy strong{
+  color:var(--navy);font-size:clamp(18px,2vw,25px);
+  font-weight:900;line-height:1.6;white-space:nowrap
+}
+.brand-copy small{
+  color:#9a6b1c;font-size:12px;font-weight:800;line-height:1.8
+}
+.navlinks{display:flex;gap:17px;align-items:center;font-size:12px}
 .navlinks a:hover{color:#b47c1c}
 
 .btn{
-  border:0;border-radius:14px;padding:12px 20px;
-  background:var(--navy);color:white;font-weight:700;
+  border:0;border-radius:13px;padding:12px 18px;
+  background:var(--navy);color:white;font-weight:800;
   display:inline-flex;align-items:center;justify-content:center;
   gap:8px;transition:.2s
 }
@@ -63,10 +72,11 @@ button{cursor:pointer}
 
 .hero{
   position:relative;overflow:hidden;
-  background:radial-gradient(ellipse at 20% 20%,#183d70 0,transparent 43%),
-  linear-gradient(120deg,#06152e,#0c2850 65%,#06152e);
-  color:white;padding:60px 6%;min-height:330px;
-  display:grid;grid-template-columns:1.1fr .9fr;
+  background:
+    radial-gradient(ellipse at 20% 20%,#183d70 0,transparent 43%),
+    linear-gradient(120deg,#06152e,#0c2850 65%,#06152e);
+  color:white;padding:57px 6%;min-height:350px;
+  display:grid;grid-template-columns:1.15fr .85fr;
   align-items:center;gap:35px
 }
 .hero:before{
@@ -76,19 +86,28 @@ button{cursor:pointer}
   box-shadow:0 0 0 30px #d5a64b08,0 0 0 65px #d5a64b08
 }
 .eyebrow{color:#f2c46e;font-size:13px;font-weight:800}
-.hero h1{font-size:clamp(30px,4vw,46px);line-height:1.7;margin:12px 0}
-.hero h1 span{color:#f0c36d}
-.hero p{line-height:2.2;color:#e2e9f5;max-width:580px;font-size:14px}
+.hero h1{
+  font-size:clamp(32px,4.2vw,48px);
+  font-weight:900;line-height:1.8;margin:12px 0
+}
+.hero h1 .hero-subtitle{
+  display:block;margin-top:5px;color:#f5d58e;
+  font-size:clamp(22px,3vw,32px);
+  font-weight:800;line-height:1.8;
+  text-shadow:0 2px 16px #d5a64b25
+}
+.hero p{line-height:2.3;color:#e2e9f5;max-width:600px;font-size:14px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 .hero-art{display:flex;justify-content:center;align-items:center;position:relative;min-height:220px}
 .coin-art{
   width:160px;height:160px;border-radius:50%;
   background:radial-gradient(circle at 30% 25%,#fff1a7,#dba43d 38%,#8d5717 62%,#f5d478 70%,#9a651e 78%,#eac35e);
   border:6px double #f9dfa0;box-shadow:0 15px 35px #0008,inset 0 0 0 5px #8e601d;
-  display:grid;place-items:center;color:#72420d;font-size:78px;font-weight:900;
+  display:grid;place-items:center;color:#72420d;font-size:75px;font-weight:900;
   text-shadow:1px 2px #ffe5a2;transform:rotate(-12deg)
 }
 .coin-art.second{
-  width:112px;height:112px;font-size:52px;
+  width:112px;height:112px;font-size:48px;
   transform:translate(28px,48px) rotate(12deg)
 }
 
@@ -105,7 +124,7 @@ button{cursor:pointer}
 .section{padding:48px 5%}
 .section-head{text-align:center;margin-bottom:28px}
 .section-head .eyebrow{color:#a87520}
-.section-head h2{margin:7px 0;font-size:29px;color:var(--navy)}
+.section-head h2{margin:7px 0;font-size:29px;color:var(--navy);font-weight:900}
 .section-head p{color:var(--muted);font-size:13px;line-height:2}
 
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -116,7 +135,7 @@ button{cursor:pointer}
 }
 .card:hover{
   transform:translateY(-4px);box-shadow:0 14px 30px #102c5814;
-  border-color:#d5a64b
+  border-color:var(--gold)
 }
 .card-top{display:flex;gap:13px;align-items:center}
 .coin-photo{
@@ -126,8 +145,8 @@ button{cursor:pointer}
 }
 .coin-photo img{width:100%;height:100%;object-fit:contain}
 .coin-fallback{
-  width:95px;height:95px;border-radius:50%;
-  display:grid;place-items:center;font-size:42px;color:#8d5918;
+  width:95px;height:95px;border-radius:50%;display:grid;
+  place-items:center;font-size:42px;color:#8d5918;
   background:radial-gradient(circle at 30% 25%,#fff0a3,#dba33e 45%,#a66b21 68%,#f5d77b 75%,#a36b1f);
   border:5px double #f7dda0
 }
@@ -163,8 +182,11 @@ button{cursor:pointer}
 .detail-item small{display:block;color:#c7d5e8;margin-bottom:6px}
 .detail-item strong{font-size:16px;color:#f5cc78}
 .detail-item a{color:#f5cc78;text-decoration:underline}
+.detail-photo{
+  width:150px;max-height:180px;object-fit:contain;
+  background:white;border-radius:12px;padding:5px
+}
 .detail-note{font-size:12px;line-height:2.2;color:#d7e1f1}
-.detail-photo{width:150px;max-height:180px;object-fit:contain;background:white;border-radius:12px;padding:5px}
 
 .lookup{
   margin:0 5% 48px;padding:30px;border-radius:22px;
@@ -172,7 +194,7 @@ button{cursor:pointer}
   display:grid;grid-template-columns:1fr 1.2fr;gap:25px;align-items:center;
   border:1px solid var(--gold)
 }
-.lookup h2{margin-top:8px}
+.lookup h2{margin-top:8px;font-weight:900}
 .lookup p{color:#d6e0ef;font-size:13px;line-height:2.2}
 .lookup-form{display:flex;gap:10px}
 .lookup input{
@@ -187,8 +209,8 @@ button{cursor:pointer}
   background:white;border:1px solid #e1e8f1;border-radius:20px;
   padding:28px;box-shadow:0 8px 25px #102c5808
 }
-.trust-panel h2{color:var(--navy);margin-top:0}
-.trust-panel p{color:#4b5d76;font-size:14px;line-height:2.3;margin-bottom:0}
+.trust-panel h2{color:var(--navy);margin-top:8px;font-weight:900}
+.trust-panel p{color:#4b5d76;font-size:14px;line-height:2.4;margin-bottom:0}
 .trust-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .trust-tags span{
   background:#fff3d8;color:#765116;border-radius:20px;
@@ -199,19 +221,22 @@ footer{background:#041329;color:white;padding:28px 5%}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
 footer p{font-size:12px;color:#d5deec;line-height:2.2}
 footer a{color:#f1c46d}
+.footer-brand .brand-copy strong{color:#f2c46e}
+.footer-brand .brand-copy small{color:#d5deec}
 .footer-bottom{
   border-top:1px solid #ffffff25;margin-top:20px;padding-top:15px;
   text-align:center;font-size:12px;color:#c5d1e3
 }
 
-@media(max-width:850px){
+@media(max-width:900px){
+  .nav{flex-wrap:wrap}
+  .navlinks{order:3;width:100%;justify-content:center;gap:15px;flex-wrap:wrap}
   .hero{grid-template-columns:1fr;padding:38px 6%;text-align:center}
   .hero-art{min-height:180px;grid-row:1}
   .coin-art{width:130px;height:130px;font-size:60px}
   .coin-art.second{width:90px;height:90px;font-size:42px}
   .hero p{margin-inline:auto}
-  .nav{flex-wrap:wrap}
-  .navlinks{order:3;width:100%;justify-content:center;gap:16px;flex-wrap:wrap}
+  .hero-actions{justify-content:center}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .features{grid-template-columns:repeat(2,1fr)}
   .feature:nth-child(2){border-left:0}
@@ -219,7 +244,12 @@ footer a{color:#f1c46d}
 }
 @media(max-width:520px){
   .topbar{justify-content:center;text-align:center}
-  .brand strong{font-size:20px}
+  .nav{padding:13px 4%}
+  .logo{width:58px;height:58px;min-width:58px;border-radius:16px}
+  .logo svg{width:51px;height:51px}
+  .brand-copy strong{font-size:17px;white-space:normal}
+  .brand-copy small{font-size:10px}
+  .navlinks{font-size:11px;gap:12px}
   .grid{grid-template-columns:1fr}
   .card-top{gap:12px}
   .coin-photo{width:120px;height:125px}
@@ -231,7 +261,6 @@ footer a{color:#f1c46d}
   .lookup-form{flex-direction:column}
   .lookup-form .btn{width:100%}
   .features{padding-inline:3%}
-  .navlinks{font-size:12px}
   .trust-section{padding-inline:4%}
   .trust-panel{padding:20px}
 }
@@ -248,9 +277,28 @@ footer a{color:#f1c46d}
 </div>
 
 <header class="nav">
-  <a class="brand" href="#home">
-    <span class="logo">م</span>
-    <span><strong>مسروری</strong><small>بورس سکه و استعلام اصالت</small></span>
+  <a class="brand" href="#home" aria-label="بورس سکه مسروری">
+    <span class="logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="لوگوی بورس سکه مسروری">
+        <defs>
+          <linearGradient id="goldCoin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff0b0"/>
+            <stop offset="45%" stop-color="#d5a64b"/>
+            <stop offset="100%" stop-color="#94651e"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="44" fill="url(#goldCoin)"/>
+        <circle cx="50" cy="50" r="38" fill="#071a3a" stroke="#f6d98d" stroke-width="2"/>
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#d5a64b" stroke-width="1.5" stroke-dasharray="2 3"/>
+        <path d="M26 34 L50 21 L74 34 L74 64 L50 79 L26 64 Z" fill="none" stroke="#d5a64b" stroke-width="2"/>
+        <text x="50" y="56" text-anchor="middle" font-size="26" font-weight="900" font-family="Tahoma,sans-serif" fill="#fff0b0">ب‌م</text>
+        <path d="M37 67 L50 72 L63 67" fill="none" stroke="#d5a64b" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="brand-copy">
+      <strong>بورس سکه مسروری</strong>
+      <small>سامانه استعلام اصالت سکه</small>
+    </span>
   </a>
 
   <nav class="navlinks">
@@ -266,18 +314,25 @@ footer a{color:#f1c46d}
 
 <section class="hero" id="home">
   <div>
-    <div class="eyebrow">اصالت • اعتماد • سرمایه</div>
-    <h1>بورس سکه مسروری<br><span>استعلام مشخصات سکه</span></h1>
+    <div class="eyebrow">اعتماد • شفافیت • اصالت</div>
+    <h1>
+      بورس سکه مسروری
+      <span class="hero-subtitle">سامانه استعلام اصالت سکه</span>
+    </h1>
     <p>
-      در مسروری، شفافیت اطلاعات و احترام به سرمایه مشتریان اهمیت دارد.
-      با شناسه اختصاصی هر سکه، به مشخصات ثبت‌شده آن دسترسی پیدا کنید
-      و انتخابی آگاهانه‌تر داشته باشید.
+      به سامانه استعلام اصالت سکه بورس سکه مسروری خوش آمدید.
+      با اسکن QR اختصاصی یا وارد کردن شناسه سکه، مشخصات ثبت‌شده
+      آن شامل نوع، وزن و عیار را مشاهده کنید.
+      شفافیت اطلاعات و احترام به اعتماد مشتریان، از اصول ماست.
     </p>
-    <a class="btn gold" href="#coins">مشاهده سکه‌ها　↙</a>
+    <div class="hero-actions">
+      <a class="btn gold" href="#lookup">استعلام اصالت سکه ←</a>
+      <a class="btn" href="#coins">مشاهده سکه‌ها</a>
+    </div>
   </div>
 
   <div class="hero-art" aria-label="طرح تزئینی سکه">
-    <div class="coin-art second">م</div>
+    <div class="coin-art second">ب‌م</div>
     <div class="coin-art">م</div>
   </div>
 </section>
@@ -308,7 +363,7 @@ footer a{color:#f1c46d}
 <main>
 <section class="section" id="coins">
   <div class="section-head">
-    <div class="eyebrow">مجموعه مسروری</div>
+    <div class="eyebrow">مجموعه بورس سکه مسروری</div>
     <h2>انواع سکه‌های مسروری</h2>
     <p>عکس پلمپ، شناسه، وزن و عیار هر سکه را مشاهده کنید.</p>
   </div>
@@ -317,14 +372,14 @@ footer a{color:#f1c46d}
 
 <section class="detail-wrap" id="detailArea">
   <div class="detail" id="detail" aria-live="polite">
-    <div class="eyebrow">استعلام مشخصات سکه</div>
+    <div class="eyebrow">سامانه استعلام اصالت سکه</div>
     <h2 id="detailTitle">مشخصات سکه</h2>
     <div id="detailPhoto"></div>
     <div class="detail-grid" id="detailGrid"></div>
     <p class="detail-note">
-      اطلاعات این صفحه، مشخصات ثبت‌شده برای شناسه انتخاب‌شده را نشان می‌دهد.
+      این صفحه مشخصات ثبت‌شده برای شناسه انتخاب‌شده را نمایش می‌دهد.
       نمایش اطلاعات به‌تنهایی تأیید کارشناسی یا تضمین اصالت فیزیکی سکه و پلمپ نیست.
-      در صورت نیاز به تأیید نهایی، با مجموعه تماس بگیرید.
+      برای بررسی بیشتر می‌توانید با بورس سکه مسروری تماس بگیرید.
     </p>
     <button class="btn gold" type="button" onclick="closeDetail()">بستن مشخصات</button>
   </div>
@@ -332,17 +387,17 @@ footer a{color:#f1c46d}
 
 <section class="lookup" id="lookup">
   <div>
-    <div class="eyebrow">استعلام سریع</div>
-    <h2>شناسه سکه را وارد کنید</h2>
+    <div class="eyebrow">استعلام سریع و آسان</div>
+    <h2>سامانه استعلام اصالت سکه</h2>
     <p>
       شناسه روی پلمپ را وارد کنید تا اطلاعات مربوط به همان شناسه نمایش داده شود.
+      همچنین می‌توانید QR اختصاصی روی بسته‌بندی را اسکن کنید.
     </p>
   </div>
 
   <div>
     <form class="lookup-form" id="lookupForm">
-      <input id="serialInput" placeholder="مثلاً MSR-000006"
-             autocomplete="off" required aria-label="شناسه سکه">
+      <input id="serialInput" placeholder="مثلاً MSR-000006" autocomplete="off" required aria-label="شناسه سکه">
       <button class="btn gold" type="submit">مشاهده مشخصات ←</button>
     </form>
     <div class="lookup-result" id="lookupMessage" aria-live="polite"></div>
@@ -351,8 +406,8 @@ footer a{color:#f1c46d}
 
 <section class="trust-section" id="trust">
   <div class="trust-panel">
-    <div class="eyebrow">اصول مجموعه</div>
-    <h2>اعتماد، شفافیت و اعتبار در مسروری</h2>
+    <div class="eyebrow">اصول بورس سکه مسروری</div>
+    <h2>اعتماد، شفافیت و اعتبار</h2>
     <p>
       در بورس سکه مسروری، اعتماد مشتریان، شفافیت در ارائه اطلاعات
       و احترام به سرمایه شما از اصول اصلی فعالیت ماست.
@@ -374,13 +429,27 @@ footer a{color:#f1c46d}
 
 <footer id="contact">
   <div class="footer-row">
-    <div class="brand">
-      <span class="logo">م</span>
-      <span>
-        <strong style="color:#f2c46e">مسروری</strong>
-        <small style="color:#d5deec">بورس سکه و استعلام اصالت</small>
+    <a class="brand footer-brand" href="#home" aria-label="بورس سکه مسروری">
+      <span class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="footerGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fff0b0"/>
+              <stop offset="50%" stop-color="#d5a64b"/>
+              <stop offset="100%" stop-color="#94651e"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="44" fill="url(#footerGold)"/>
+          <circle cx="50" cy="50" r="38" fill="#071a3a" stroke="#f6d98d" stroke-width="2"/>
+          <circle cx="50" cy="50" r="32" fill="none" stroke="#d5a64b" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <text x="50" y="56" text-anchor="middle" font-size="26" font-weight="900" font-family="Tahoma,sans-serif" fill="#fff0b0">ب‌م</text>
+        </svg>
       </span>
-    </div>
+      <span class="brand-copy">
+        <strong>بورس سکه مسروری</strong>
+        <small>سامانه استعلام اصالت سکه</small>
+      </span>
+    </a>
 
     <div>
       <p>
@@ -398,13 +467,11 @@ footer a{color:#f1c46d}
       </p>
       <p>
         📷 اینستاگرام:
-        <a href="https://www.instagram.com/Bourse_seke_masrouri/"
-           target="_blank" rel="noopener noreferrer">Bourse_seke_masrouri</a>
+        <a href="https://www.instagram.com/Bourse_seke_masrouri/" target="_blank" rel="noopener noreferrer">Bourse_seke_masrouri</a>
       </p>
       <p>
         وب‌سایت همکار:
-        <a href="https://artahonarshayvord.com/portfolio/05022001/"
-           target="_blank" rel="noopener noreferrer">مشاهده سایت همکار</a>
+        <a href="https://artahonarshayvord.com/portfolio/05022001/" target="_blank" rel="noopener noreferrer">مشاهده سایت همکار</a>
       </p>
     </div>
   </div>
@@ -418,10 +485,6 @@ footer a{color:#f1c46d}
 const SITE_URL = "https://masrouri-verify.github.io/masrouri-verify/";
 const PARTNER_URL = "https://artahonarshayvord.com/portfolio/05022001/";
 
-/*
-  تصاویر در ریشه مخزن GitHub قرار دارند؛ بنابراین مسیرها بدون
-  masrouri-assets نوشته شده‌اند.
-*/
 const coins = [
   {
     id:"MSR-000006",
@@ -494,10 +557,10 @@ function renderCoins(){
         <div class="coin-photo">
           <img
             src="${imageURL(coin)}"
-            alt="پلمپ ${coin.name} مسروری"
+            alt="پلمپ ${coin.name} بورس سکه مسروری"
             loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <div class="coin-fallback" style="display:none">م</div>
+          <div class="coin-fallback" style="display:none">ب‌م</div>
         </div>
 
         <div class="card-info">
@@ -513,10 +576,8 @@ function renderCoins(){
       <div class="card-bottom">
         <div>
           <a href="${coinURL(coin)}" aria-label="استعلام ${coin.name}">
-            <img class="qr"
-              src="${qrURL(coin)}"
-              alt="QR اختصاصی ${coin.name}"
-              loading="lazy">
+            <img class="qr" src="${qrURL(coin)}"
+              alt="QR اختصاصی ${coin.name}" loading="lazy">
           </a>
           <div class="qr-text">QR اختصاصی</div>
         </div>
@@ -534,8 +595,7 @@ function showCoin(id, updateURL = false){
   const message = document.getElementById("lookupMessage");
 
   if(!coin){
-    message.textContent =
-      "این شناسه در فهرست سکه‌ها پیدا نشد. لطفاً کد را بررسی کنید.";
+    message.textContent = "این شناسه در فهرست سکه‌ها پیدا نشد. لطفاً کد را بررسی کنید.";
     return;
   }
 
@@ -549,14 +609,13 @@ function showCoin(id, updateURL = false){
   img.alt = "پلمپ " + coin.name;
   img.src = imageURL(coin);
   img.onerror = function(){
-    this.alt = "تصویر این سکه در حال حاضر در دسترس نیست.";
     this.style.display = "none";
   };
   photo.appendChild(img);
 
   document.getElementById("detailGrid").innerHTML = `
     <div class="detail-item">
-      <small>نوع سکه</small>
+      <small>نام سکه</small>
       <strong>${coin.name}</strong>
     </div>
     <div class="detail-item">
@@ -564,11 +623,11 @@ function showCoin(id, updateURL = false){
       <strong>${coin.id}</strong>
     </div>
     <div class="detail-item">
-      <small>وزن</small>
+      <small>وزن ثبت‌شده</small>
       <strong>${coin.weight} گرم</strong>
     </div>
     <div class="detail-item">
-      <small>عیار</small>
+      <small>عیار ثبت‌شده</small>
       <strong>۹۰۰</strong>
     </div>
     <div class="detail-item">
@@ -590,29 +649,23 @@ function showCoin(id, updateURL = false){
   message.textContent = "مشخصات " + coin.name + " نمایش داده شد.";
 
   if(updateURL){
-    history.pushState(
-      {coinId:coin.id},
-      "",
-      "?code=" + encodeURIComponent(coin.id)
-    );
+    history.pushState({coinId:coin.id},"","?code="+encodeURIComponent(coin.id));
   }
 
   document.getElementById("detailArea").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
+    behavior:"smooth",block:"start"
   });
 }
 
 function closeDetail(){
   document.getElementById("detail").classList.remove("visible");
   document.getElementById("lookupMessage").textContent = "";
-
-  history.pushState({}, "", location.pathname);
+  history.pushState({},"",location.pathname);
 }
 
-document.getElementById("lookupForm").addEventListener("submit", function(event){
+document.getElementById("lookupForm").addEventListener("submit",function(event){
   event.preventDefault();
-  showCoin(document.getElementById("serialInput").value, true);
+  showCoin(document.getElementById("serialInput").value,true);
 });
 
 function readCoinFromURL(){
@@ -620,17 +673,16 @@ function readCoinFromURL(){
   const id = params.get("code") || params.get("id");
 
   if(id){
-    showCoin(id, false);
+    showCoin(id,false);
   }else{
     document.getElementById("detail").classList.remove("visible");
   }
 }
 
-window.addEventListener("popstate", readCoinFromURL);
+window.addEventListener("popstate",readCoinFromURL);
 
 renderCoins();
 readCoinFromURL();
 </script>
-
 </body>
 </html>
