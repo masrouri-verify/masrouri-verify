@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071a3a">
 <title>مسروری | بورس سکه و استعلام اصالت</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
@@ -25,12 +26,14 @@ body{
 }
 a{color:inherit;text-decoration:none}
 button,input{font:inherit}
+
 .topbar{
   background:var(--navy);color:white;padding:12px 5%;
   display:flex;justify-content:space-between;align-items:center;
   gap:12px;flex-wrap:wrap;font-size:13px
 }
 .topbar a{color:#f3cc7c}
+
 .nav{
   background:white;display:flex;align-items:center;
   justify-content:space-between;padding:15px 5%;
@@ -47,6 +50,7 @@ button,input{font:inherit}
 .brand small{display:block;color:var(--muted);font-size:12px}
 .navlinks{display:flex;gap:22px;align-items:center;font-size:14px}
 .navlinks a:hover{color:#b47c1c}
+
 .btn{
   border:0;border-radius:14px;padding:12px 20px;
   background:var(--navy);color:white;cursor:pointer;
@@ -55,6 +59,7 @@ button,input{font:inherit}
 }
 .btn:hover{background:var(--navy2);transform:translateY(-1px)}
 .btn.gold{background:linear-gradient(120deg,#f4d28c,#c18a2e);color:var(--navy)}
+
 .hero{
   position:relative;overflow:hidden;
   background:radial-gradient(ellipse at 20% 20%,#183d70 0,transparent 43%),
@@ -81,6 +86,7 @@ button,input{font:inherit}
   text-shadow:1px 2px #ffe5a2;transform:rotate(-12deg)
 }
 .coin-art.second{width:112px;height:112px;font-size:52px;transform:translate(28px,48px) rotate(12deg)}
+
 .features{
   background:white;display:grid;grid-template-columns:repeat(4,1fr);
   padding:28px 5%;gap:12px;border-bottom:1px solid #e7edf5
@@ -90,11 +96,13 @@ button,input{font:inherit}
 .feature .ico{font-size:28px;color:#b47c1c}
 .feature strong{display:block;margin:6px 0}
 .feature small{color:var(--muted);font-size:12px}
+
 .section{padding:48px 5%}
 .section-head{text-align:center;margin-bottom:28px}
 .section-head .eyebrow{color:#a87520}
 .section-head h2{margin:7px 0;font-size:30px;color:var(--navy)}
 .section-head p{color:var(--muted);font-size:14px}
+
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .card{
   background:white;border:1px solid #e1e8f1;border-radius:20px;
@@ -131,6 +139,7 @@ button,input{font:inherit}
 }
 .qr-text{font-size:10px;color:var(--muted);text-align:center;margin-top:4px}
 .card-bottom .btn{flex:1;padding:11px 8px;font-size:12px}
+
 .detail-wrap{padding:0 5% 42px;scroll-margin-top:20px}
 .detail{
   display:none;background:linear-gradient(130deg,#06162f,#102f5c);
@@ -144,6 +153,7 @@ button,input{font:inherit}
 .detail-item small{display:block;color:#c7d5e8;margin-bottom:6px}
 .detail-item strong{font-size:18px;color:#f5cc78}
 .detail-note{font-size:12px;line-height:2;color:#d7e1f1}
+
 .lookup{
   margin:0 5% 50px;padding:30px;border-radius:22px;
   background:linear-gradient(120deg,#06162f,#102f5c);color:white;
@@ -159,45 +169,47 @@ button,input{font:inherit}
   direction:ltr;text-align:left
 }
 .lookup-result{font-size:13px;color:#f4ce80;margin-top:12px;line-height:2}
+
 footer{background:#041329;color:white;padding:28px 5%}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
 footer p{font-size:12px;color:#d5deec;line-height:2}
 footer a{color:#f1c46d}
 .footer-bottom{border-top:1px solid #ffffff25;margin-top:20px;padding-top:15px;text-align:center;font-size:12px;color:#c5d1e3}
 .notice{font-size:11px;color:#d8e1ef;margin-top:15px;line-height:2}
+
 @media(max-width:850px){
- .hero{grid-template-columns:1fr;padding:38px 6%;text-align:center}
- .hero-art{min-height:180px;grid-row:1}
- .coin-art{width:130px;height:130px;font-size:60px}
- .coin-art.second{width:90px;height:90px;font-size:42px}
- .hero p{margin-inline:auto}
- .nav{flex-wrap:wrap}
- .navlinks{order:3;width:100%;justify-content:center;gap:16px;flex-wrap:wrap}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .features{grid-template-columns:repeat(2,1fr)}
- .feature:nth-child(2){border-left:0}
- .lookup{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;padding:38px 6%;text-align:center}
+  .hero-art{min-height:180px;grid-row:1}
+  .coin-art{width:130px;height:130px;font-size:60px}
+  .coin-art.second{width:90px;height:90px;font-size:42px}
+  .hero p{margin-inline:auto}
+  .nav{flex-wrap:wrap}
+  .navlinks{order:3;width:100%;justify-content:center;gap:16px;flex-wrap:wrap}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .feature:nth-child(2){border-left:0}
+  .lookup{grid-template-columns:1fr}
 }
 @media(max-width:520px){
- .topbar{justify-content:center;text-align:center}
- .brand strong{font-size:20px}
- .grid{grid-template-columns:1fr}
- .card-top{gap:12px}
- .coin-photo{width:120px;height:125px}
- .section{padding:35px 4%}
- .section-head h2{font-size:25px}
- .detail{padding:20px}
- .detail-grid{grid-template-columns:1fr 1fr}
- .lookup{margin-inline:4%;padding:22px}
- .lookup-form{flex-direction:column}
- .lookup-form .btn{width:100%}
- .features{padding-inline:3%}
- .navlinks{font-size:12px}
+  .topbar{justify-content:center;text-align:center}
+  .brand strong{font-size:20px}
+  .grid{grid-template-columns:1fr}
+  .card-top{gap:12px}
+  .coin-photo{width:120px;height:125px}
+  .section{padding:35px 4%}
+  .section-head h2{font-size:25px}
+  .detail{padding:20px}
+  .detail-grid{grid-template-columns:1fr 1fr}
+  .lookup{margin-inline:4%;padding:22px}
+  .lookup-form{flex-direction:column}
+  .lookup-form .btn{width:100%}
+  .features{padding-inline:3%}
+  .navlinks{font-size:12px}
 }
 </style>
 </head>
-<body>
 
+<body>
 <div class="topbar">
   <span>📷 <a href="https://instagram.com/Bourse_seke_marouri" target="_blank" rel="noopener">Bourse_seke_marouri</a></span>
   <span>☎ <a href="tel:09131839848">09131839848</a></span>
@@ -295,35 +307,86 @@ footer a{color:#f1c46d}
 
 <script>
 const SITE_URL = "https://masrouri-verify.github.io/masrouri-verify/";
+const PARTNER_URL = "https://artahonarshayvord.com/portfolio/05022001/";
 
+/* مشخصات شش سکه */
 const coins = [
-  {id:"MSR-000006",name:"ربع سکه عادی",weight:"۲٫۰۳۳",type:"عادی",image:""},
-  {id:"MSR-000005",name:"نیم سکه عادی",weight:"۴٫۰۶۶",type:"عادی",image:""},
-  {id:"MSR-000004",name:"تمام سکه عادی",weight:"۸٫۱۳۳",type:"عادی",image:""},
-  {id:"MSR-000003",name:"ربع سکه بانکی",weight:"۲٫۰۳۳",type:"بانکی",image:"rob-bank-front.jpg"},
-  {id:"MSR-000002",name:"نیم سکه بانکی",weight:"۴٫۰۶۶",type:"بانکی",image:"nim-bank-front.jpg"},
-  {id:"MSR-000001",name:"تمام سکه بانکی",weight:"۸٫۱۳۳",type:"بانکی",image:"tamam-bank-front.jpg"}
+  {
+    id:"MSR-000006",
+    name:"ربع سکه عادی",
+    weight:"۲٫۰۳۳",
+    type:"عادی",
+    image:"masrouri-assets/rob-adi-MSR-000006.jpg"
+  },
+  {
+    id:"MSR-000005",
+    name:"نیم سکه عادی",
+    weight:"۴٫۰۶۶",
+    type:"عادی",
+    image:"masrouri-assets/nim-adi-MSR-000005.jpg"
+  },
+  {
+    id:"MSR-000004",
+    name:"تمام سکه عادی",
+    weight:"۸٫۱۳۳",
+    type:"عادی",
+    image:"masrouri-assets/tamam-adi-MSR-000004.jpg"
+  },
+  {
+    id:"MSR-000003",
+    name:"ربع سکه بانکی",
+    weight:"۲٫۰۳۳",
+    type:"بانکی",
+    image:"masrouri-assets/rob-banki-MSR-000003.jpg"
+  },
+  {
+    id:"MSR-000002",
+    name:"نیم سکه بانکی",
+    weight:"۴٫۰۶۶",
+    type:"بانکی",
+    image:"masrouri-assets/nim-banki-MSR-000002.jpg"
+  },
+  {
+    id:"MSR-000001",
+    name:"تمام سکه بانکی",
+    weight:"۸٫۱۳۳",
+    type:"بانکی",
+    image:"masrouri-assets/tamam-banki-MSR-000001.jpg"
+  }
 ];
 
+function findCoin(id){
+  const normalized = String(id || "").trim().toUpperCase();
+  return coins.find(coin => coin.id === normalized);
+}
+
+/* QRها و لینک‌ها از پارامتر code استفاده می‌کنند */
 function coinURL(coin){
-  return SITE_URL + "?id=" + encodeURIComponent(coin.id);
+  return SITE_URL + "?code=" + encodeURIComponent(coin.id);
 }
+
 function qrURL(coin){
-  return "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=" + encodeURIComponent(coinURL(coin));
+  return "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data="
+    + encodeURIComponent(coinURL(coin));
 }
+
+/* ساخت کارت‌ها با حفظ طراحی قبلی */
 function renderCoins(){
-  const grid=document.getElementById("coinGrid");
-  grid.innerHTML=coins.map(coin=>{
-    const photo=coin.image
-      ? `<img src="${coin.image}" alt="${coin.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">`
-      : "";
+  const grid = document.getElementById("coinGrid");
+
+  grid.innerHTML = coins.map(coin => {
+    const photo = `
+      <img src="${coin.image}"
+           alt="${coin.name}"
+           loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+      <div class="coin-fallback" style="display:none">م</div>
+    `;
+
     return `
       <article class="card">
         <div class="card-top">
-          <div class="coin-photo">
-            ${photo}
-            <div class="coin-fallback" style="${coin.image?'display:none':''}">م</div>
-          </div>
+          <div class="coin-photo">${photo}</div>
           <div class="card-info">
             <h3>${coin.name}</h3>
             <span class="serial">${coin.id}</span>
@@ -333,66 +396,122 @@ function renderCoins(){
             </div>
           </div>
         </div>
+
         <div class="card-bottom">
           <div>
             <a href="${coinURL(coin)}" aria-label="باز کردن صفحه ${coin.name}">
-              <img class="qr" src="${qrURL(coin)}" alt="QR اختصاصی ${coin.name}" loading="lazy">
+              <img class="qr"
+                   src="${qrURL(coin)}"
+                   alt="QR اختصاصی ${coin.name}"
+                   loading="lazy">
             </a>
             <div class="qr-text">QR اختصاصی</div>
           </div>
-          <button class="btn" onclick="showCoin('${coin.id}')">مشاهده مشخصات ←</button>
+          <button class="btn" onclick="showCoin('${coin.id}',true)">
+            مشاهده مشخصات ←
+          </button>
         </div>
-      </article>`;
+      </article>
+    `;
   }).join("");
 }
-function showCoin(id, updateURL=false){
-  const coin=coins.find(c=>c.id.toUpperCase()===String(id).trim().toUpperCase());
-  const message=document.getElementById("lookupMessage");
+
+/* نمایش مشخصات همان سکه */
+function showCoin(id, updateURL = false){
+  const coin = findCoin(id);
+  const message = document.getElementById("lookupMessage");
+  const detail = document.getElementById("detail");
+
   if(!coin){
-    message.textContent="این شناسه در فهرست سکه‌ها پیدا نشد. کد را بررسی کنید.";
+    message.textContent = "این شناسه در فهرست سکه‌ها پیدا نشد. کد را بررسی کنید.";
     return;
   }
-  document.getElementById("detailTitle").textContent=coin.name;
-  document.getElementById("detailGrid").innerHTML=`
-    <div class="detail-item"><small>نوع سکه</small><strong>${coin.name}</strong></div>
-    <div class="detail-item"><small>شناسه اختصاصی</small><strong>${coin.id}</strong></div>
-    <div class="detail-item"><small>وزن</small><strong>${coin.weight} گرم</strong></div>
-    <div class="detail-item"><small>عیار</small><strong>۹۰۰</strong></div>
-    <div class="detail-item"><small>دسته‌بندی</small><strong>سکه ${coin.type}</strong></div>
-    <div class="detail-item"><small>شناسه صفحه</small><strong>${coin.id}</strong></div>`;
-  document.getElementById("detail").classList.add("visible");
-  document.getElementById("serialInput").value=coin.id;
-  message.textContent="مشخصات " + coin.name + " نمایش داده شد.";
+
+  document.getElementById("detailTitle").textContent = coin.name;
+
+  document.getElementById("detailGrid").innerHTML = `
+    <div class="detail-item">
+      <small>نوع سکه</small>
+      <strong>${coin.name}</strong>
+    </div>
+    <div class="detail-item">
+      <small>شناسه اختصاصی</small>
+      <strong>${coin.id}</strong>
+    </div>
+    <div class="detail-item">
+      <small>وزن</small>
+      <strong>${coin.weight} گرم</strong>
+    </div>
+    <div class="detail-item">
+      <small>عیار</small>
+      <strong>۹۰۰</strong>
+    </div>
+    <div class="detail-item">
+      <small>دسته‌بندی</small>
+      <strong>سکه ${coin.type}</strong>
+    </div>
+    <div class="detail-item">
+      <small>وب‌سایت همکار</small>
+      <strong>
+        <a href="${PARTNER_URL}" target="_blank" rel="noopener noreferrer">
+          مشاهده سایت همکار
+        </a>
+      </strong>
+    </div>
+  `;
+
+  detail.classList.add("visible");
+  document.getElementById("serialInput").value = coin.id;
+  message.textContent = "مشخصات " + coin.name + " نمایش داده شد.";
+
   if(updateURL){
-    history.pushState({}, "", "?id="+encodeURIComponent(coin.id));
+    history.pushState(
+      {coinId:coin.id},
+      "",
+      "?code=" + encodeURIComponent(coin.id)
+    );
   }
-  document.getElementById("detailArea").scrollIntoView({behavior:"smooth",block:"start"});
+
+  document.getElementById("detailArea").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
+
 function closeDetail(){
   document.getElementById("detail").classList.remove("visible");
-  history.pushState({}, "", location.pathname);
-}
-document.getElementById("lookupForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  showCoin(document.getElementById("serialInput").value,true);
-});
-window.addEventListener("popstate",()=>{
-  const id=new URLSearchParams(location.search).get("id");
-  if(id) showCoin(id,false);
-  else document.getElementById("detail").classList.remove("visible");
-});
-renderCoins();
+  document.getElementById("lookupMessage").textContent = "";
 
-/* با ورود به لینک QR، همان سکه خودکار نمایش داده می‌شود. */
-const initialID=new URLSearchParams(location.search).get("id");
-if(initialID){
-  const matched=coins.find(c=>c.id===initialID.toUpperCase());
-  if(matched){
-    showCoin(matched.id,false);
+  const cleanURL = location.pathname;
+  history.pushState({}, "", cleanURL);
+}
+
+/* استعلام دستی با شناسه */
+document.getElementById("lookupForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  showCoin(document.getElementById("serialInput").value, true);
+});
+
+/* پشتیبانی از دکمه‌های برگشت و جلو مرورگر */
+window.addEventListener("popstate", function(){
+  readCoinFromURL();
+});
+
+/* QRهای جدید با code و لینک‌های قدیمی با id */
+function readCoinFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("code") || params.get("id");
+
+  if(id){
+    showCoin(id, false);
   }else{
-    document.getElementById("lookupMessage").textContent="شناسه موجود نیست.";
+    document.getElementById("detail").classList.remove("visible");
   }
 }
+
+/* راه‌اندازی صفحه */
+renderCoins();
+readCoinFromURL();
 </script>
 </body>
 </html>
