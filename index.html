@@ -77,143 +77,113 @@ button{cursor:pointer}
 .hero p{line-height:2.3;color:#e2e9f5;max-width:600px;font-size:14px}
 .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* انیمیشن لوکس حلقه‌های طلایی */
+/* جلوه سه‌بعدی کریستال طلایی */
 .hero-art{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:300px;
-  perspective:1000px;
-  isolation:isolate;
+  position:relative;display:flex;align-items:center;justify-content:center;
+  min-height:320px;perspective:1100px;isolation:isolate;overflow:visible
 }
-.luxury-orbit{
-  position:relative;
-  width:260px;
-  height:260px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.gold-showcase{
+  position:relative;width:300px;height:300px;display:grid;place-items:center;
+  transform-style:preserve-3d
 }
-.orbit-glow{
-  position:absolute;
-  width:190px;
-  height:190px;
-  border-radius:50%;
-  background:radial-gradient(circle,#f6d98d35 0%,#d5a64b16 42%,transparent 72%);
-  filter:blur(8px);
-  animation:glowPulse 4s ease-in-out infinite;
+.gold-aura{
+  position:absolute;width:230px;height:230px;border-radius:50%;
+  background:radial-gradient(circle,#f9d77d55 0%,#d5a64b20 38%,transparent 72%);
+  filter:blur(12px);animation:auraBreath 5s ease-in-out infinite
 }
-.orbit-ring{
-  position:absolute;
-  width:235px;
-  height:235px;
-  border:1px solid #f5d58d75;
-  border-radius:50%;
-  transform:rotateX(68deg) rotateZ(-25deg);
-  box-shadow:0 0 18px #d5a64b18,inset 0 0 18px #d5a64b10;
-  animation:orbitSpin 12s linear infinite;
+.gold-platform{
+  position:absolute;bottom:31px;width:220px;height:65px;border-radius:50%;
+  background:radial-gradient(ellipse,#e8bd5b40 0%,#d5a64b18 48%,transparent 72%);
+  border:1px solid #eac56a55;transform:rotateX(72deg);
+  box-shadow:0 0 30px #d5a64b20
 }
-.orbit-ring.ring-two{
-  width:205px;
-  height:205px;
-  border-color:#fff0b080;
-  transform:rotateX(68deg) rotateZ(55deg);
-  animation:orbitSpinReverse 15s linear infinite;
+.gold-platform:before,.gold-platform:after{
+  content:"";position:absolute;inset:10px;border:1px solid #f7d98d65;border-radius:50%
 }
-.orbit-ring.ring-three{
-  width:270px;
-  height:270px;
-  border:1px solid #d5a64b35;
-  transform:rotateX(72deg) rotateZ(15deg);
-  animation:orbitSpin 20s linear infinite;
+.gold-platform:after{inset:-13px;border-color:#d5a64b35}
+.crystal{
+  position:relative;width:155px;height:190px;transform-style:preserve-3d;
+  animation:crystalHover 5.5s ease-in-out infinite;
+  filter:drop-shadow(0 18px 24px #0007) drop-shadow(0 0 22px #e9bd5b55)
 }
-.orbit-core{
-  position:relative;
-  width:125px;
-  height:125px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transform:rotate(45deg);
-  border-radius:27px;
-  background:
-    linear-gradient(135deg,#fff4c4 0%,#eac36c 22%,#a96e21 48%,#f8dc91 68%,#b47a2b 100%);
-  border:2px solid #ffe7a2;
-  box-shadow:
-    0 0 25px #e8bd5d65,
-    0 0 65px #d5a64b30,
-    inset 0 0 0 5px #fff0b5,
-    inset 0 0 0 9px #b77c2b,
-    inset 0 0 18px #fff0b0;
-  animation:coreFloat 5s ease-in-out infinite;
+.crystal-shape{
+  position:absolute;inset:0;
+  clip-path:polygon(50% 0%,91% 22%,100% 65%,50% 100%,0 65%,9% 22%);
+  background:linear-gradient(135deg,#fff4c5 0%,#e9bd5b 17%,#a86d22 37%,#f9df91 52%,#bd842e 72%,#fff0b2 100%);
 }
-.orbit-core:before{
-  content:"";
-  position:absolute;
-  inset:15px;
-  border:1px solid #fff1bc;
-  border-radius:18px;
-  box-shadow:inset 0 0 15px #fff4bd55;
+.crystal-shape:before{
+  content:"";position:absolute;inset:8px;
+  clip-path:polygon(50% 0%,91% 22%,100% 65%,50% 100%,0 65%,9% 22%);
+  border:2px solid #fff0b8;
+  background:linear-gradient(145deg,#fff5cf55,#8c571b22 55%,#fff3c655)
 }
-.core-light{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fff 0%,#fff0b4 18%,#e9bd5d 45%,#a76b20 100%);
-  box-shadow:0 0 20px #fff0b5,0 0 40px #d5a64b80;
+.crystal-facet{
+  position:absolute;inset:0;clip-path:polygon(50% 0%,50% 100%,9% 22%);
+  background:linear-gradient(155deg,#fff8d8 0%,#e7bd66 38%,#a56a20 100%);
+  opacity:.9
 }
-.orbit-dot{
-  position:absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#ffe9a6;
-  box-shadow:0 0 12px 4px #d5a64b70;
+.crystal-facet.right{
+  clip-path:polygon(50% 0%,91% 22%,50% 100%);
+  background:linear-gradient(205deg,#fff2b8 0%,#c18a32 48%,#754719 100%)
 }
-.dot-one{top:30px;left:45px;animation:dotFloat 4s ease-in-out infinite}
-.dot-two{right:25px;bottom:55px;width:7px;height:7px;animation:dotFloat 5s ease-in-out infinite -2s}
-.dot-three{left:30px;bottom:45px;width:6px;height:6px;animation:dotFloat 4.5s ease-in-out infinite -1s}
-.dot-four{right:48px;top:25px;width:5px;height:5px;animation:dotFloat 3.8s ease-in-out infinite -1.5s}
+.crystal-band{
+  position:absolute;left:-35px;right:-35px;top:48%;height:3px;
+  background:linear-gradient(90deg,transparent,#fff2bd,#d5a64b,#fff7d7,transparent);
+  box-shadow:0 0 14px #ffe7a1;transform:rotate(-13deg)
+}
+.crystal-halo{
+  position:absolute;width:225px;height:225px;border:1px solid #f5d58d80;
+  border-radius:50%;transform:rotateX(70deg) rotateZ(-20deg);
+  animation:haloTurn 18s linear infinite
+}
+.crystal-halo.second{
+  width:260px;height:260px;border-color:#d5a64b40;
+  transform:rotateX(70deg) rotateZ(55deg);animation:haloTurnBack 24s linear infinite
+}
+.spark{
+  position:absolute;width:7px;height:7px;border-radius:50%;
+  background:#fff0b5;box-shadow:0 0 13px 4px #e9bd5b88;
+  animation:sparkDrift 4s ease-in-out infinite
+}
+.spark.s1{top:38px;left:48px}
+.spark.s2{top:80px;right:25px;width:5px;height:5px;animation-delay:-1s}
+.spark.s3{bottom:64px;left:28px;width:6px;height:6px;animation-delay:-2s}
+.spark.s4{bottom:35px;right:54px;width:4px;height:4px;animation-delay:-.7s}
+.spark.s5{top:18px;right:90px;width:4px;height:4px;animation-delay:-2.5s}
+.shine{
+  position:absolute;width:17px;height:17px;
+  background:#fff3c6;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
+  filter:drop-shadow(0 0 7px #ffe9a5);animation:shinePulse 3s ease-in-out infinite
+}
+.shine.one{top:48px;right:43px}
+.shine.two{bottom:58px;left:48px;width:11px;height:11px;animation-delay:-1.4s}
 
-.orbit-star{
-  position:absolute;
-  width:15px;
-  height:15px;
-  background:#fff0b5;
-  clip-path:polygon(50% 0%,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0% 50%,38% 38%);
-  filter:drop-shadow(0 0 7px #f5d58d);
-  animation:starBlink 3s ease-in-out infinite;
+@keyframes crystalHover{
+  0%,100%{transform:translateY(3px) rotateY(-9deg) rotateZ(-3deg)}
+  50%{transform:translateY(-13px) rotateY(9deg) rotateZ(3deg)}
 }
-.star-one{top:5px;right:75px}
-.star-two{bottom:20px;left:65px;animation-delay:-1.5s;width:10px;height:10px}
-
-@keyframes orbitSpin{
-  from{transform:rotateX(68deg) rotateZ(0deg)}
-  to{transform:rotateX(68deg) rotateZ(360deg)}
+@keyframes auraBreath{
+  0%,100%{transform:scale(.88);opacity:.65}
+  50%{transform:scale(1.13);opacity:1}
 }
-@keyframes orbitSpinReverse{
-  from{transform:rotateX(68deg) rotateZ(360deg)}
-  to{transform:rotateX(68deg) rotateZ(0deg)}
+@keyframes haloTurn{
+  from{transform:rotateX(70deg) rotateZ(0)}
+  to{transform:rotateX(70deg) rotateZ(360deg)}
 }
-@keyframes coreFloat{
-  0%,100%{transform:rotate(45deg) translateY(0)}
-  50%{transform:rotate(45deg) translateY(-10px)}
+@keyframes haloTurnBack{
+  from{transform:rotateX(70deg) rotateZ(360deg)}
+  to{transform:rotateX(70deg) rotateZ(0)}
 }
-@keyframes glowPulse{
-  0%,100%{transform:scale(.9);opacity:.65}
-  50%{transform:scale(1.15);opacity:1}
+@keyframes sparkDrift{
+  0%,100%{transform:translate3d(0,0,0);opacity:.45}
+  50%{transform:translate3d(5px,-13px,12px);opacity:1}
 }
-@keyframes dotFloat{
-  0%,100%{transform:translateY(0);opacity:.55}
-  50%{transform:translateY(-13px);opacity:1}
-}
-@keyframes starBlink{
-  0%,100%{transform:scale(.7);opacity:.5}
-  50%{transform:scale(1.25);opacity:1}
+@keyframes shinePulse{
+  0%,100%{transform:scale(.7) rotate(0);opacity:.5}
+  50%{transform:scale(1.25) rotate(45deg);opacity:1}
 }
 @media(prefers-reduced-motion:reduce){
-  .orbit-ring,.orbit-core,.orbit-glow,.orbit-dot,.orbit-star{animation:none!important}
+  .gold-aura,.crystal,.crystal-halo,.spark,.shine{animation:none!important}
 }
 
 .features{
@@ -335,7 +305,7 @@ footer a{color:#f1c46d}
   .features{padding-inline:3%}
   .trust-section{padding-inline:4%}
   .trust-panel{padding:20px}
-  .luxury-orbit{transform:scale(.85)}
+  .gold-showcase{transform:scale(.85)}
 }
 </style>
 </head>
@@ -379,21 +349,21 @@ footer a{color:#f1c46d}
     </div>
   </div>
 
-  <div class="hero-art" aria-label="انیمیشن تزئینی طلایی">
-    <div class="luxury-orbit">
-      <div class="orbit-glow"></div>
-      <div class="orbit-ring ring-three"></div>
-      <div class="orbit-ring"></div>
-      <div class="orbit-ring ring-two"></div>
-      <div class="orbit-core">
-        <div class="core-light"></div>
+  <div class="hero-art" aria-label="جلوه سه‌بعدی کریستال طلایی">
+    <div class="gold-showcase">
+      <div class="gold-aura"></div>
+      <div class="crystal-halo"></div>
+      <div class="crystal-halo second"></div>
+      <div class="gold-platform"></div>
+      <div class="crystal">
+        <div class="crystal-shape"></div>
+        <div class="crystal-facet"></div>
+        <div class="crystal-facet right"></div>
+        <div class="crystal-band"></div>
       </div>
-      <span class="orbit-dot dot-one"></span>
-      <span class="orbit-dot dot-two"></span>
-      <span class="orbit-dot dot-three"></span>
-      <span class="orbit-dot dot-four"></span>
-      <span class="orbit-star star-one"></span>
-      <span class="orbit-star star-two"></span>
+      <span class="spark s1"></span><span class="spark s2"></span>
+      <span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span>
+      <span class="shine one"></span><span class="shine two"></span>
     </div>
   </div>
 </section>
